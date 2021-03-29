@@ -1,7 +1,7 @@
 @extends('backend.master')
 @section('content')
 	 <section class="data_table"> <!--========== data table start ==========-->
-                <form  method="post" enctype="multipart/form-data" id="myform"> <!--==========data form start ==========-->
+                <form action=""> <!--==========data form start ==========-->
                     <div class="data_heading"> <!--========== data table heading start ==========-->
                     <h3>room add</h3>
                     <h4><span class="data_text"><a href="#">Database</a></span> / <span class="add_text">Add room</span></h4>
@@ -14,271 +14,603 @@
                                     <div class="data_input">
                                             <div class="row input_row">
                                                 <div class="col-12 col-sm-12 col-md-3">
-                                                    <label class="input_field_name" for="room_name">Room name</label>
+                                                    <label class="input_field_name" for="room_name">room name</label>
                                                     <br>
-                                                    <input class="data_field_input_tag" type="text" id="room_name" placeholder="Room name" name="room_name">
+                                                    <input class="data_field_input_tag" type="text" id="room_name" placeholder="Room name">
                                                 </div>
                                                 <div class="col-12 col-sm-12 col-md-3">
-                                                    <label class="input_field_name" for="room_number">Room number</label>
+                                                    <label class="input_field_name" for="room_number">room number</label>
                                                     <br>
-                                                    <input class="data_field_input_tag" type="number" id="room_number" placeholder="Room number" name="room_number">
+                                                    <input class="data_field_input_tag" type="text" id="room_number" placeholder="Room number">
                                                 </div>
                                                 <div class="col-12 col-sm-12 col-md-3">
-                                                    <label  class="input_field_name" for="available">Available</label>
+                                                    <label class="input_field_name" for="available">available</label>
                                                     <br>
-                                                    <select id="available"  class="data_field_input_tag" name="available">
-                                                        <option selected>Choose...</option>
-                                                        <option value="yes">Yes</option>
-                                                        <option value="no">No</option>
-                                                    </select>
+                                                    <input class="data_field_input_tag" type="text" id="available" placeholder="Available">
                                                 </div>
                                                 <div class="col-12 col-sm-12 col-md-3">
-                                                     <label  class="input_field_name" for="status">Status</label>
+                                                    <label class="input_field_name" for="status">status</label>
                                                     <br>
-                                                    <select id="status"  class="data_field_input_tag" name="status">
-                                                        <option selected>Choose...</option>
-                                                        <option value="active">Active</option>
-                                                        <option value="inactive">Inactive</option>
-                                                    </select>
+                                                    <input class="data_field_input_tag" type="text" id="status" placeholder="Status">
                                                 </div>
                                             </div>
                                             <div class="row input_row">
                                                 <div class="col-12 col-sm-12 col-md-3">
-                                                    <label class="input_field_name" for="bed_type">Bed type</label>
+                                                    <label class="input_field_name" for="bed_type">bed type</label>
                                                     <br>
-                                                    <input class="data_field_input_tag" type="text" id="bed_type" placeholder="Bed type" name ="bed_type">
+                                                    <input class="data_field_input_tag" type="text" id="bed_type" placeholder="Bed type">
                                                 </div>
                                                 <div class="col-12 col-sm-12 col-md-3">
                                                     <label class="input_field_name" for="type_name">Type name</label>
                                                     <br>
-                                                    <input class="data_field_input_tag" type="text" id="type_name" placeholder="Type name" name="type_name">
+                                                    <input class="data_field_input_tag" type="text" id="type_name" placeholder="Type name">
                                                 </div>
                                                 <div class="col-12 col-sm-12 col-md-3">
                                                     <label class="input_field_name" for="cost_pre_day">Cost per day</label>
                                                     <br>
-                                                    <input class="data_field_input_tag" type="number" id="cost_pre_day" placeholder="Cost per day" name="cost_per_day">
+                                                    <input class="data_field_input_tag" type="text" id="cost_pre_day" placeholder="Cost per day">
                                                 </div>
                                                 <div class="col-12 col-sm-12 col-md-3">
                                                     <label class="input_field_name" for="discount">Discount</label>
                                                     <br>
-                                                    <input class="data_field_input_tag" type="number" id="discount" placeholder="Discount" name="discount">
+                                                    <input class="data_field_input_tag" type="text" id="discount" placeholder="Discount">
                                                 </div>
                                             </div>
                                             <div class="row input_row">
                                                 <div class="col-12 col-sm-12 col-md-3">
                                                     <label class="input_field_name" for="size">Size</label>
                                                     <br>
-                                                    <input class="data_field_input_tag" type="text" id="size" placeholder="Size" name="size">
+                                                    <input class="data_field_input_tag" type="text" id="size" placeholder="Size">
                                                 </div>
                                                 <div class="col-12 col-sm-12 col-md-3">
                                                     <label class="input_field_name" for="max_adult">Max adult</label>
                                                     <br>
-                                                    <input class="data_field_input_tag" type="text" id="max_adult" placeholder="Max adult" name="max_adult">
+                                                    <input class="data_field_input_tag" type="text" id="max_adult" placeholder="Max adult">
                                                 </div>
                                                 <div class="col-12 col-sm-12 col-md-3">
                                                     <label class="input_field_name" for="max_guest">Max guest</label>
                                                     <br>
-                                                    <input class="data_field_input_tag" type="text" id="max_guest" placeholder="Max guest" name="max_guest">
-                                                </div>
-                                                  <div class="col-12 col-sm-12 col-md-3">
-                                                     <label  class="input_field_name" for="room_type_status">Status</label>
-                                                    <br>
-                                                    <select id="room_type_status"  class="data_field_input_tag" name="room_type_status">
-                                                        <option selected>Choose...</option>
-                                                        <option value="active">Active</option>
-                                                        <option value="inactive">Inactive</option>
-                                                    </select>
+                                                    <input class="data_field_input_tag" type="text" id="max_guest" placeholder="Max guest">
                                                 </div>
                                             </div>
                                             <div class="row input_row">
                                                 <div class="col-12">
                                                     <label class="input_field_name" for="description">Description</label>
                                                     <br>
-                                                    <textarea class="description_taxt" id="description" cols="30" rows="3" name="description"></textarea>
+                                                    <textarea class="description_taxt" name="" id="description" cols="30" rows="3"></textarea>
                                                 </div>
                                             </div>
+                                    </div>
+                                    <div class="continue_btn continue_btn_1">
+                                        <a class="cuntinue_1 stop_scrolling" data-user-code="@(user.Code)" href="#">continue</a>
                                     </div>
                                 </div>
                             </div> <!--========== basic info end ==========-->
                         </div>
                     </div>
                 </div> <!--========== data table input end ==========-->
-
-                <div class="container"> <!--========== check box data input start ==========-->
+    
+                <div class="container content_display_none_1"> <!--========== check box data input start ==========-->
                     <div class="check_bata_field">
                         <div class="data_input_field_head">
                             <h3>room facility</h3>
                         </div>
-                        <div class="row" id="facilities">
-                            <!-- Append facilities from script -->
-                        </div>
-
-                            <div>
-                                <input type="file" name="image[]" multiple class="input_field_name" id="image">
-                                <div class="img_preview">
-
+                        <div class="row content_display_none_2">
+                            <div class="col-12">
+                                <div class="chack_box_area">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="free_wifi">
+                                            <label class="input_field_name check_box_label" for="free_wifi">free wifi</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="resturent">
+                                            <label class="input_field_name check_box_label" for="resturent">resturent</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="room_service">
+                                            <label class="input_field_name check_box_label" for="room_service">room service</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="bar">
+                                            <label class="input_field_name check_box_label" for="bar">bar</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="family_room">
+                                            <label class="input_field_name check_box_label" for="family_room">family room</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="breakfast">
+                                            <label class="input_field_name check_box_label" for="breakfast">breakfast</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="lunch">
+                                            <label class="input_field_name check_box_label" for="lunch">lunch</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="balcony">
+                                            <label class="input_field_name check_box_label" for="balcony">balcony</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="free_wifi">
+                                            <label class="input_field_name check_box_label" for="free_wifi">free wifi</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="resturent">
+                                            <label class="input_field_name check_box_label" for="resturent">resturent</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="room_service">
+                                            <label class="input_field_name check_box_label" for="room_service">room service</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="bar">
+                                            <label class="input_field_name check_box_label" for="bar">bar</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="family_room">
+                                            <label class="input_field_name check_box_label" for="family_room">family room</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="breakfast">
+                                            <label class="input_field_name check_box_label" for="breakfast">breakfast</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="lunch">
+                                            <label class="input_field_name check_box_label" for="lunch">lunch</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="balcony">
+                                            <label class="input_field_name check_box_label" for="balcony">balcony</label>
+                                        </div>
+                                    </div>
+                                    <div class="continue_btn continue_btn_2">
+                                        <a class="cuntinue_2 stop_scrolling" data-user-code="@(user.Code)" href="#">continue</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div> <!--========== add room and text end ==========-->
+                        </div>
+                        <div class="row row_margin_top content_display_none_3">
+                            <div class="col-12">
+                                <div class="chack_box_area">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="free_wifi">
+                                            <label class="input_field_name check_box_label" for="free_wifi">free wifi</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="resturent">
+                                            <label class="input_field_name check_box_label" for="resturent">resturent</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="room_service">
+                                            <label class="input_field_name check_box_label" for="room_service">room service</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="bar">
+                                            <label class="input_field_name check_box_label" for="bar">bar</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="family_room">
+                                            <label class="input_field_name check_box_label" for="family_room">family room</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="breakfast">
+                                            <label class="input_field_name check_box_label" for="breakfast">breakfast</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="lunch">
+                                            <label class="input_field_name check_box_label" for="lunch">lunch</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="balcony">
+                                            <label class="input_field_name check_box_label" for="balcony">balcony</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="free_wifi">
+                                            <label class="input_field_name check_box_label" for="free_wifi">free wifi</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="resturent">
+                                            <label class="input_field_name check_box_label" for="resturent">resturent</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="room_service">
+                                            <label class="input_field_name check_box_label" for="room_service">room service</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="bar">
+                                            <label class="input_field_name check_box_label" for="bar">bar</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="family_room">
+                                            <label class="input_field_name check_box_label" for="family_room">family room</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="breakfast">
+                                            <label class="input_field_name check_box_label" for="breakfast">breakfast</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="lunch">
+                                            <label class="input_field_name check_box_label" for="lunch">lunch</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="balcony">
+                                            <label class="input_field_name check_box_label" for="balcony">balcony</label>
+                                        </div>
+                                    </div>
+                                    <div class="continue_btn continue_btn_3">
+                                        <a class="cuntinue_3 stop_scrolling" data-user-code="@(user.Code)" href="#">continue</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row_margin_top content_display_none_4">
+                            <div class="col-12">
+                                <div class="chack_box_area">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="free_wifi">
+                                            <label class="input_field_name check_box_label" for="free_wifi">free wifi</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="resturent">
+                                            <label class="input_field_name check_box_label" for="resturent">resturent</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="room_service">
+                                            <label class="input_field_name check_box_label" for="room_service">room service</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="bar">
+                                            <label class="input_field_name check_box_label" for="bar">bar</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="family_room">
+                                            <label class="input_field_name check_box_label" for="family_room">family room</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="breakfast">
+                                            <label class="input_field_name check_box_label" for="breakfast">breakfast</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="lunch">
+                                            <label class="input_field_name check_box_label" for="lunch">lunch</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="balcony">
+                                            <label class="input_field_name check_box_label" for="balcony">balcony</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="free_wifi">
+                                            <label class="input_field_name check_box_label" for="free_wifi">free wifi</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="resturent">
+                                            <label class="input_field_name check_box_label" for="resturent">resturent</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="room_service">
+                                            <label class="input_field_name check_box_label" for="room_service">room service</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="bar">
+                                            <label class="input_field_name check_box_label" for="bar">bar</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="family_room">
+                                            <label class="input_field_name check_box_label" for="family_room">family room</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="breakfast">
+                                            <label class="input_field_name check_box_label" for="breakfast">breakfast</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="lunch">
+                                            <label class="input_field_name check_box_label" for="lunch">lunch</label>
+                                        </div>
+                                        <div class="col-12 col-sm-4 col-md-2">
+                                            <input class="check_box_input" type="checkbox" id="balcony">
+                                            <label class="input_field_name check_box_label" for="balcony">balcony</label>
+                                        </div>
+                                    </div>
+                                    <div class="continue_btn continue_btn_4">
+                                        <a class="cuntinue_4 stop_scrolling" data-user-code="@(user.Code)" href="#">continue</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="row">
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="check_boxes padding_bottom">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <input class="check_box_input" type="checkbox" id="free_wifi">
+                                    <label class="input_field_name check_box_label" for="free_wifi">free wifi</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="resturent">
+                                    <label class="input_field_name check_box_label" for="resturent">resturent</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="room_service">
+                                    <label class="input_field_name check_box_label" for="room_service">room service</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="bar">
+                                    <label class="input_field_name check_box_label" for="bar">bar</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="family_room">
+                                    <label class="input_field_name check_box_label" for="family_room">family room</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="breakfast">
+                                    <label class="input_field_name check_box_label" for="breakfast">breakfast</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="lunch">
+                                    <label class="input_field_name check_box_label" for="lunch">lunch</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="balcony">
+                                    <label class="input_field_name check_box_label" for="balcony">balcony</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="check_boxes padding_top">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <input class="check_box_input" type="checkbox" id="air_condition">
+                                    <label class="input_field_name check_box_label" for="air_condition">air condition</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="front_desk">
+                                    <label class="input_field_name check_box_label" for="front_desk">24-hour front desk</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="garden">
+                                    <label class="input_field_name check_box_label" for="garden">garden</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="water_park">
+                                    <label class="input_field_name check_box_label" for="water_park">water park</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="swimming_pool">
+                                    <label class="input_field_name check_box_label" for="swimming_pool">swimming pool</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="dinner">
+                                    <label class="input_field_name check_box_label" for="dinner">dinner</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="tv">
+                                    <label class="input_field_name check_box_label" for="tv">tv</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="view">
+                                    <label class="input_field_name check_box_label" for="view">view</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="check_boxes padding_top">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <input class="check_box_input" type="checkbox" id="air_condition">
+                                    <label class="input_field_name check_box_label" for="air_condition">air condition</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="front_desk">
+                                    <label class="input_field_name check_box_label" for="front_desk">24-hour front desk</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="garden">
+                                    <label class="input_field_name check_box_label" for="garden">garden</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="water_park">
+                                    <label class="input_field_name check_box_label" for="water_park">water park</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="swimming_pool">
+                                    <label class="input_field_name check_box_label" for="swimming_pool">swimming pool</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="dinner">
+                                    <label class="input_field_name check_box_label" for="dinner">dinner</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="tv">
+                                    <label class="input_field_name check_box_label" for="tv">tv</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="view">
+                                    <label class="input_field_name check_box_label" for="view">view</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="check_boxes padding_top">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <input class="check_box_input" type="checkbox" id="air_condition">
+                                    <label class="input_field_name check_box_label" for="air_condition">air condition</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="front_desk">
+                                    <label class="input_field_name check_box_label" for="front_desk">24-hour front desk</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="garden">
+                                    <label class="input_field_name check_box_label" for="garden">garden</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="water_park">
+                                    <label class="input_field_name check_box_label" for="water_park">water park</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="swimming_pool">
+                                    <label class="input_field_name check_box_label" for="swimming_pool">swimming pool</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="dinner">
+                                    <label class="input_field_name check_box_label" for="dinner">dinner</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="tv">
+                                    <label class="input_field_name check_box_label" for="tv">tv</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="view">
+                                    <label class="input_field_name check_box_label" for="view">view</label>
+                                </div>
+                            </div>
+                        </div>-->
+                        <!--<div class="row">
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="check_boxes padding_bottom">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <input class="check_box_input" type="checkbox" id="free_wifi">
+                                    <label class="input_field_name check_box_label" for="free_wifi">free wifi</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="resturent">
+                                    <label class="input_field_name check_box_label" for="resturent">resturent</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="room_service">
+                                    <label class="input_field_name check_box_label" for="room_service">room service</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="bar">
+                                    <label class="input_field_name check_box_label" for="bar">bar</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="family_room">
+                                    <label class="input_field_name check_box_label" for="family_room">family room</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="breakfast">
+                                    <label class="input_field_name check_box_label" for="breakfast">breakfast</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="lunch">
+                                    <label class="input_field_name check_box_label" for="lunch">lunch</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="balcony">
+                                    <label class="input_field_name check_box_label" for="balcony">balcony</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="check_boxes padding_top">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <input class="check_box_input" type="checkbox" id="air_condition">
+                                    <label class="input_field_name check_box_label" for="air_condition">air condition</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="front_desk">
+                                    <label class="input_field_name check_box_label" for="front_desk">24-hour front desk</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="garden">
+                                    <label class="input_field_name check_box_label" for="garden">garden</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="water_park">
+                                    <label class="input_field_name check_box_label" for="water_park">water park</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="swimming_pool">
+                                    <label class="input_field_name check_box_label" for="swimming_pool">swimming pool</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="dinner">
+                                    <label class="input_field_name check_box_label" for="dinner">dinner</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="tv">
+                                    <label class="input_field_name check_box_label" for="tv">tv</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="view">
+                                    <label class="input_field_name check_box_label" for="view">view</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="check_boxes padding_top">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <input class="check_box_input" type="checkbox" id="air_condition">
+                                    <label class="input_field_name check_box_label" for="air_condition">air condition</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="front_desk">
+                                    <label class="input_field_name check_box_label" for="front_desk">24-hour front desk</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="garden">
+                                    <label class="input_field_name check_box_label" for="garden">garden</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="water_park">
+                                    <label class="input_field_name check_box_label" for="water_park">water park</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="swimming_pool">
+                                    <label class="input_field_name check_box_label" for="swimming_pool">swimming pool</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="dinner">
+                                    <label class="input_field_name check_box_label" for="dinner">dinner</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="tv">
+                                    <label class="input_field_name check_box_label" for="tv">tv</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="view">
+                                    <label class="input_field_name check_box_label" for="view">view</label>
+                                </div>
+                            </div>
+                            <div class="col-12 col-sm-6 col-md-3">
+                                <div class="check_boxes padding_top">
+                                    <div class="room_facility_head">
+                                        <h3>room facility</h3>
+                                    </div>
+                                    <input class="check_box_input" type="checkbox" id="air_condition">
+                                    <label class="input_field_name check_box_label" for="air_condition">air condition</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="front_desk">
+                                    <label class="input_field_name check_box_label" for="front_desk">24-hour front desk</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="garden">
+                                    <label class="input_field_name check_box_label" for="garden">garden</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="water_park">
+                                    <label class="input_field_name check_box_label" for="water_park">water park</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="swimming_pool">
+                                    <label class="input_field_name check_box_label" for="swimming_pool">swimming pool</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="dinner">
+                                    <label class="input_field_name check_box_label" for="dinner">dinner</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="tv">
+                                    <label class="input_field_name check_box_label" for="tv">tv</label>
+                                    <br>
+                                    <input class="check_box_input" type="checkbox" id="view">
+                                    <label class="input_field_name check_box_label" for="view">view</label>
+                                </div>
+                            </div>
+                        </div>-->
                     </div>
                 </div> <!--========== check box data input end ==========-->
-                <div class="container">
-                    <div class="row">
-                        <button id="submit_btn" class="add_btn">add</button>
-                    </div>
-                </div>
-                </form> <!--==========data form end ==========-->
-    </section> <!--========== data table end ==========-->
-@endsection
-@push('style')
-<style>
-    input[type="file"] {
-      display: block;
-    }
-    .imageThumb {
-      max-height: 75px;
-      border: 2px solid;
-      padding: 1px;
-      cursor: pointer;
-    }
-    .img_preview {
-      display: inline-block;
-      margin: 10px 10px 0 0;
-    }
-    .remove {
-      display: block;
-      background: #444;
-      border: 1px solid black;
-      color: white;
-      text-align: center;
-      cursor: pointer;
-    }
-    .remove:hover {
-      background: white;
-      color: black;
-    }
-</style>
-@endpush
-@push('scripts')
-    <script>
-        let facilites_category = []
-        let facilites  = {
-            spa:['Steam Bath or Steam Room','Hammam', 'Vitality Pool', 'Relaxation Spaces','Experience Shower'],
-            breakfast:['Egg and bread', 'Bread and jamm', 'Tea and bread'],
-            gym:['Weught lifting', 'Lockers', 'lounge'],
-        }
-        let fecth_facilites_category_url = '{{ url("/fetch/facilities-category") }}'
-        function fecthFacilitesCategory() {
-            $.ajax({
-                url: fecth_facilites_category_url,
-                type: "GET",
-                dataType: "JSON",
-                success: (res) => {
-                    if (res.status) {
-                        facilites_category = res.facilities_category
-                        createFacilities(facilites_category)
-                    } else {
-                        toastr.error(res.message)
-                    }
-                },
-                error: (e) => {
-                    console.log(e)
-                }
-            });
-        }
-        fecthFacilitesCategory()
-        function createFacilities(data) {
-            let rowId = $('#facilities');
-            rowId.empty()
-            for (let i = 0; i < data.length; i++) {
-                let row = `
-                         <div class="col-12 col-sm-6 col-md-3">
-                                    <div class="check_boxes padding_bottom">
-                                        <div class="room_facility_head">
-                                            <h3>${data[i].name}</h3>
-                                            <div id="${data[i].name}">
-                                            </div>
+                <div class="container content_display_none_5">
+                    <div class="add_room_imgs_wrapp">
+                        <div class="add_room_imgs"> <!--========== add room and text start ==========-->
+                            <div class="row">
+                                <div class="col-9">
+                                    <div class="select_img_text">
+                                        <div>
+                                            <h3>Select your hotel imeages for make a beautiful result</h3>
+                                            <h4>You can select only 2 images. Now <span class="img_quentity">0</span>images selected</h4>
                                         </div>
                                     </div>
                                 </div>
-                        `
-                rowId.append(row)
-                let check_box_id = $(`#${[data[i].name]}`);
-                let facilitiesArray = facilites[data[i].name].forEach(r=>{
-                      let check = `
-                            <input class="check_box_input" onchange="myFunction('${r}', '${data[i].name}')"  type="checkbox" id="${r.split(" ").join("_")}">
-                            <label class="input_field_name check_box_label" for="${r.split(" ").join("_")}">${r}</label>
-                           <br>
-                        `
-                    check_box_id.append(check)
-                })
-            }
-        }
-        let selected_facilities = {
-            spa:[],
-            breakfast:[],
-            gym:[],
-        }
-        function myFunction(value, cat_name){
-            const index = selected_facilities[cat_name].indexOf(value)
-            if(index === -1  ){
-                selected_facilities[cat_name].push(value)
-            }else{
-                selected_facilities[cat_name].splice(index,1)
-            }
-        }
-        $("#image").on("change", function(e) {
-            let files = e.target.files
-            let filesLength = files.length
-            for (let i = 0; i < filesLength; i++) {
-                let f = files[i]
-                let fileReader = new FileReader()
-                fileReader.onload = (function(e) {
-                  let file = e.target;
-                 /* let test = `<img class="imageThumb" src= "${e.target.result}" />`*/
-                  let tets = $("<span class=\"img_preview\">" +
-                    "<img class=\"imageThumb\" src=\"" + e.target.result + "\" title=\"" + file.name + "\"/>" +
-                    "<br/>").insertAfter("#image");
-                  $('.img_preview').append(tets)
-                })
-                fileReader.readAsDataURL(f);
-            }
-        })
-        let url = '{{ url("/rooms") }}'
-        $("#myform").on('submit',function(e) {
-            $.ajaxSetup({
-                headers: {
-                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                }
-            });
-            e.preventDefault();
+                                <div class="col-3">
+                                    <div class="img_select_input">
+                                        <input type="file">
+                                    </div>
+                                </div>
+                            </div>
+                        </div> <!--========== add room and text end ==========-->
+                        <div class="continue_btn continue_btn_5">
+                            <a class="cuntinue_5 stop_scrolling" data-user-code="@(user.Code)" href="#">continue</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container content_display_none_6">
+                    <div class="row">
+                        <button class="add_btn">add</button>
+                    </div>
+                </div>
+                </form> <!--==========data form end ==========-->
+            </section> 
+@endsection
+@push('style')
 
-            let formData = new FormData(this)
-            console.log(selected_facilities)
-            formData.append('selected_facilities',JSON.stringify(selected_facilities) )
-            $.ajax({
-                type: 'POST',
-                url: url,
-                data: formData,
-                cache: false,
-                contentType: false,
-                processData: false,
-                success: (data) => {
-                    if (data.status) {
-                        this.reset()
-                        toastr.success(data.message)
-                        $('.img_preview').empty()
-                    } else {
-                        toastr.error(data.message)
-                    }
-                },
-                error: function(error) {
-                    console.log(error);
-                    Object.keys(error.responseJSON.errors).forEach((key) => {
-                        toastr.error(error.responseJSON.errors[key][0]);
-                    })
-                }
-            });
-        })
-    </script>
+@endpush
+@push('scripts')
+    
 @endpush

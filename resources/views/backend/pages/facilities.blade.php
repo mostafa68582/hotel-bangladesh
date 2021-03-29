@@ -1,11 +1,12 @@
 @extends('backend.master')
 <!--
 @section('master-panel')
-<div class="pageheader-title float-left">Facilities Panel</div>
- <div class="pageheader-title float-right"><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#facilitiesModal"><i class="fas fa-plus"></i></a></div>
+
 @endsection-->
 @section('content')
 <!--facilities list search start-->
+<div class="pageheader-title float-left">Facilities Panel</div>
+ <div class="pageheader-title float-right"><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#facilitiesModal"><i class="fas fa-plus"></i></a></div>
 <div class="card">
   <div class="card-header">
    	<i class="fas fa-list"></i> Facilities Filtering
