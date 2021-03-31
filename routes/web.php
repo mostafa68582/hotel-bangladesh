@@ -71,6 +71,7 @@ Route::resource('/room-images','ImageController');
 //Route::resource('/hotels','HotelController');
 //this is for test by jahid 28.3.2021
 Route::resource('/hotels','HotelController');
+
 Route::resource('/chat','hotelchating');
 //this is for test by jahid 28.3.2021 end here
 

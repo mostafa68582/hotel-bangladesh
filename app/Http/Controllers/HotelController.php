@@ -33,7 +33,7 @@ class HotelController extends Controller
      */
     public function create()
     {
-        //
+         return view('backend.pages.hotels.create');
     }
 
     /**

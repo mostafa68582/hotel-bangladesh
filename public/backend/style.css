@@ -44,6 +44,7 @@ body{
     width: 100%;
     position: fixed;
     z-index: 101;
+    height: 6rem;
 }
 
 .navbar-brand{
@@ -190,6 +191,7 @@ ul.dropdown-menu.admin_drop_menu.show li {
 
 .navigation_item_header{
     border-bottom: .001rem solid #3E4C88;
+    padding-left: 1rem;
 }
 
 .navigation_item_header ul{
@@ -307,6 +309,7 @@ ul.dropdown-menu.admin_drop_menu.show li {
     width: 88%;
     margin-left: auto;
     margin-top: 6rem;
+    margin-bottom: 8rem;
 }
 
 /*data table input start*/
@@ -319,7 +322,7 @@ ul.dropdown-menu.admin_drop_menu.show li {
     color: #171B1B;
     font-weight: bold;
     text-transform: capitalize;
-    font-size: 2.5rem;
+    font-size: 2rem;
 }
 
 .data_text a{
@@ -336,7 +339,7 @@ ul.dropdown-menu.admin_drop_menu.show li {
 }
 
 .data_input_field {
-    margin: 2rem;
+    margin: 1rem 2rem;
 }
 
 .data_input_field_head {
@@ -353,22 +356,22 @@ ul.dropdown-menu.admin_drop_menu.show li {
 }
 
 .input_row{
-    margin-top: 1rem;
+    margin-top: .5rem;
 }
 
 label.input_field_name {
     color: #686361;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: bold;
     text-transform: capitalize;
-    padding: .5rem 0;
+    padding: .3rem 0;
 }
 
 .data_field_input_tag {
     border: 0.02rem solid #d8d6d6;
-    padding: 1rem;
+    padding: .7rem;
     color: #333;
-    font-size: 1.2rem;
+    font-size: 1rem;
     border-radius: .2rem;
     outline: none;
     width: 100%;
@@ -602,7 +605,6 @@ label.input_field_name {
     font-size: 1.7rem;
     text-transform: capitalize;
     border-radius: .2rem;
-    margin-bottom: 8rem;
 }
 /*data table end*/
 
@@ -643,3 +645,110 @@ label.input_field_name {
     font-weight: bold;
 }
 /*footer end*/
+
+/*add hotel and room start*/
+
+.check_bata_field{
+    background: #fff;
+    padding: 2rem 0;
+    margin-bottom: 2rem;
+}
+
+.row_margin_top{
+    margin-top: 2rem;
+}
+
+.chack_box_area{
+    padding: 0 2rem;
+}
+
+.continue_btn{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.add_room_imgs_wrapp{
+    padding: 2rem;
+}
+
+.add_room_imgs{
+    border: .01rem solid #d8d6d6;
+    padding: 2rem;
+}
+
+.select_img_text {
+    display: flex;
+    align-items: center;
+    padding-left: 3rem;
+}
+
+.select_img_text div h3{
+    font-size: 2rem;
+    color: #171B1B;
+    font-weight: bold;
+}
+
+.select_img_text div h4{
+    font-size: 1.7rem;
+    color: #686361;
+    font-weight: normal;
+}
+
+.img_select_input{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 100%;
+}
+
+.img_select_input input{
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #171B1B;
+}
+
+.continue_btn{
+    /*margin: 1rem 0;*/
+}
+
+.continue_btn a{
+    text-decoration: none;
+    padding: 1rem;
+    display: block;
+    background: #3498db;
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.content_display_none_1{
+    display: none;
+}
+
+.content_display_none_2{
+    display: none;
+}
+
+.content_display_none_3{
+    display: none;
+}
+
+.content_display_none_4{
+    display: none;
+}
+
+.content_display_none_5{
+    display: none;
+}
+
+.content_display_none_6{
+    display: none;
+}
+
+.display_block{
+    display: block !important;
+}
+/*add hotel and room end*/
