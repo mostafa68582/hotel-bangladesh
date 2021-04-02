@@ -14,8 +14,9 @@ class CreateFaciltiesCategoriesTable extends Migration
     public function up()
     {
         Schema::create('facilties_categories', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
             $table->string('name');
+            $table->string('icon', 200)->nullable();
             $table->timestamps();
         });
     }

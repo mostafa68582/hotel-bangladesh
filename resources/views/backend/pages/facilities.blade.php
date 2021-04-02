@@ -1,15 +1,13 @@
 @extends('backend.master')
-<!--
-@section('master-panel')
-
-@endsection-->
 @section('content')
 <!--facilities list search start-->
-<div class="pageheader-title float-left">Facilities Panel</div>
+<!--<div class="row">
+  <div class="pageheader-title float-left">Facilities Panel</div>
  <div class="pageheader-title float-right"><a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#facilitiesModal"><i class="fas fa-plus"></i></a></div>
+</div>-->
 <div class="card">
   <div class="card-header">
-   	<i class="fas fa-list"></i> Facilities Filtering
+    <i class="fas fa-list"></i> Facilities Filtering
   </div>
   <div class="card-body">
   <form action="post" id="searchForm">
@@ -27,12 +25,18 @@
         <option>inactive</option>
       </select>
     </div>
-    <div class="form-group col-md-4">
+    <div class="form-group col-md-2">
       <button type="submit" id="search-submit" class="btn btn-primary" style="margin-top: 19px;
     border-radius: 7px;"><i class="fas fa-search"></i>Search</button>
     </div>
+    </form>
+    <div class="form-group col-md-2">
+      <a href="#" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#facilitiesModal" style="margin-top: 19px;
+    border-radius: 7px;"><i class="fas fa-plus"></i>Add new</a>
+    </div>
   </div>
-</form>
+
+
   </div>
 </div><!--facilities list search end-->
 

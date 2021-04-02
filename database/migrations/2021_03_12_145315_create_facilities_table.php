@@ -14,11 +14,17 @@ class CreateFacilitiesTable extends Migration
     public function up()
     {
         Schema::create('facilities', function (Blueprint $table) {
-            $table->increments('id');
+            $table->bigIncrements('id');
             $table->string('name', 50)->unique();
             $table->string('icon', 200);
+            $table->unsignedBigInteger('categories_id');
+            //$table->foreign('categories_id')
+           // ->references('id')
+            //->on('facilties_categories')
+            //->onDelete('cascade');
             $table->enum('status', ['active','inactive'])->default('active');
             $table->timestamps();
+           
         });
     }
 

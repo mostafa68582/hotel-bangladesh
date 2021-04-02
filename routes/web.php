@@ -26,6 +26,21 @@ Route::get('/add-room', function () {
 Route::get('/', function () {
     return view('backend.master');
 })->name('home');
+
+//For hotel start
+//this is for test by jahid 28.3.2021
+Route::resource('/hotels','HotelController');
+Route::resource('/chat','hotelchating');
+//this is for test by jahid 28.3.2021 end here
+// for hotel end
+
+// For categories 2.04.21
+Route::resource('/categories','faciCategoController');
+//Route::post('/categories/{id}','faciCategoController@update')->name('facilities.update');
+//Route::get('/fetch/categories','faciCategoController@fetchFacilities');
+//Route::post('/search/categories','faciCategoController@facilitiesSearch');
+
+
 // For facilities
 Route::resource('/facilities','FacilitiesController')->except('update');
 Route::post('/facilities/{id}','FacilitiesController@update')->name('facilities.update');
@@ -67,13 +82,7 @@ Route::get('/fetch/room','RoomBookingController@getRoom');
 // For Room picture
 Route::resource('/room-images','ImageController');
 
-// For hotel by Ahad
-//Route::resource('/hotels','HotelController');
-//this is for test by jahid 28.3.2021
-Route::resource('/hotels','HotelController');
 
-Route::resource('/chat','hotelchating');
-//this is for test by jahid 28.3.2021 end here
 
 /*Test for HasMany rln*/
 Route::get('/rln',function(){
