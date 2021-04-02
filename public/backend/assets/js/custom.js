@@ -27,11 +27,11 @@ if ($(window).width() <= 774){
 /*add hotel and room start*/
 
 $(document).ready(function(){
-    $(".cuntinue_1").click(function(){
+   /* $(".cuntinue_1").click(function(){
         $(".content_display_none_1").css({"display":"block"});
         $(".content_display_none_2").css({"display":"block"});
         $(".continue_btn_1").css({"display":"none"})
-    });
+    });*/
 });
 
 $(document).ready(function(){

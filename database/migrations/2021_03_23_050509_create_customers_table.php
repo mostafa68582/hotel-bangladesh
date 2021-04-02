@@ -14,28 +14,27 @@ class CreateCustomersTable extends Migration
     public function up()
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
+            $table->increments('id');
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
             $table->string('user_name');
             $table->string('phone');
             $table->string('email');
-            $table->string('address');
-            $table->string('children_number');
-            $table->string('children_age');
+            $table->string('address')->nullable();
+            $table->string('child_number');
+            $table->string('child_age')->nullable();
             $table->string('adult_number');
             $table->string('guest_number');
             $table->string('room_name');
             $table->string('hotel_name');
-            $table->integer('hotel_id');
-            $table->integer('hotel_number');
-            $table->integer('room_id');
-            $table->string('check_in');
-            $table->string('check_out');
-            $table->string('payment_mode');
-            $table->string('payment_system');
-            $table->string('review');
-            $table->string('comments');
+            $table->unsignedBigInteger('hotel_id');
+            $table->unsignedBigInteger('room_id');
+            $table->datetime('check_in');
+            $table->datetime('check_out');
+            $table->enum('payment_mode', ['cash','gateway'])->default('gateway');
+            $table->enum('payment_status',['paid','unpaid'])->default('unpaid');
+            $table->string('review')->nullable();
+            $table->string('comments')->nullable();
             $table->enum('status', ['pending','approved'])->default('pending');
             $table->timestamps();
         });

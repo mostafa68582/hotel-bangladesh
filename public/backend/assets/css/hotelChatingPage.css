@@ -148,12 +148,17 @@
     text-transform: uppercase;
 }
 
+
 .chat_box_text_area{
+    border-right: .01rem solid #ccc4c4;
     width: 65.7%;
-    height: calc(100vh - 12rem);
+    height: calc(100vh - 25rem);
     background: #fff;
     overflow: hidden;
     position: fixed;
+    display: block;
+    margin-top: 6.3rem;
+    z-index: 100;
 }
 
 .chat_box_text_area:hover{
@@ -224,7 +229,7 @@
 
 /*massege input box start*/
 .massege_input_box{
-    margin-top: calc(100vh - 12rem);
+    margin-top: calc(100vh - 19rem);
     position: fixed;
     border-top: .01rem solid #ccc4c4;
     border-right: .01rem solid #ccc4c4;
