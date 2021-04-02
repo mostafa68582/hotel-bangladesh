@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\model\facilities;
-use App\model\RoomType;
+use App\Models;
+use App\Models\RoomType;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,7 +30,7 @@ Route::get('/', function () {
 //For hotel start
 //this is for test by jahid 28.3.2021
 Route::resource('/hotels','HotelController');
-Route::resource('/chat','hotelchating');
+Route::resource('/chat','hotelChatController');
 //this is for test by jahid 28.3.2021 end here
 // for hotel end
 
@@ -42,10 +42,10 @@ Route::resource('/categories','faciCategoController');
 
 
 // For facilities
-Route::resource('/facilities','FacilitiesController')->except('update');
-Route::post('/facilities/{id}','FacilitiesController@update')->name('facilities.update');
-Route::get('/fetch/facilities','FacilitiesController@fetchFacilities');
-Route::post('/search/facilities','FacilitiesController@facilitiesSearch');
+Route::resource('/facilities','FacilityController')->except('update');
+Route::post('/facilities/{id}','FacilityController@update')->name('facilities.update');
+Route::get('/fetch/facilities','FacilityController@fetchFacilities');
+Route::post('/search/facilities','FacilityController@facilitiesSearch');
 
 // For User
 Route::resource('/users','UserController')->except('update');

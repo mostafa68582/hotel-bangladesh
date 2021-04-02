@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\model\Images;
+use App\Models\Image;
 use Image;
 
 class ImageController extends Controller
@@ -58,7 +58,7 @@ class ImageController extends Controller
                     /*$img_uploads= $file->move(public_path().'/uploads/user_img/', $full_file_name);*/
                     $img_uploads  = Image::make($file)->resize(200, 250)->save(public_path('uploads/room_picture/').$full_file_name);
                     if($img_uploads){
-                        Images::create([
+                        Image::create([
                             'room_type_id' => $request->room_type_id,
                             'image'        => $full_file_name,
                             'caption'      => $request->caption,

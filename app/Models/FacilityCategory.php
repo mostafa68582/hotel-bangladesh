@@ -1,10 +1,10 @@
 <?php
 
-namespace App\model;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class FaciltiesCategory extends Model
+class FacilityCategory extends Model
 {
     protected $fillable = ['name'];
 

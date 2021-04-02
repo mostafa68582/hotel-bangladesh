@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\model\Room;
-use App\model\RoomType;
-use App\model\FaciltiesCategory;
-use App\model\facilities;
-use App\model\Images;
+use App\Models\Room;
+use App\Models\RoomType;
+use App\Models\FacilityCategory;
+use App\Models\facilities;
+use App\Models\Image;
 use Image;
 
 class RoomController extends Controller
@@ -49,7 +49,7 @@ class RoomController extends Controller
         ]);
     }
     public function fetchFacilitiesCategory(){
-        $facilities_category = FaciltiesCategory::all();
+        $facilities_category = FacilityCategory::all();
         return response()->json([
             'status' => true,
             'facilities_category' => $facilities_category
@@ -119,7 +119,7 @@ class RoomController extends Controller
                     'status'       => $request->status,
                 ]);
                     $facilites = json_decode($request->selected_facilities, true);
-                    $facilities_category = FaciltiesCategory::all();
+                    $facilities_category = FacilityCategory::all();
                     foreach($facilities_category as $category){
                         foreach($facilites[$category->name] as $facility){
                             facilities::create([
@@ -135,7 +135,7 @@ class RoomController extends Controller
                     $full_file_name = $file_Name."-".\Str::random(20)."-".time().'.'.$file->getClientOriginalExtension();
                     $img_uploads  = Image::make($file)->resize(200, 250)->save(public_path('uploads/room_picture/').$full_file_name);
                     if($img_uploads){
-                        Images::create([
+                        Image::create([
                             'room_type_id' => $room_type->id,
                             'image'        => $full_file_name,
                         ]);

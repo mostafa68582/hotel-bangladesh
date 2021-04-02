@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\model\Hotel;
-use App\model\HotelImage;
+use App\Models\Hotel;
+use App\Models\HotelImage;
 use Image;
 
 class HotelController extends Controller

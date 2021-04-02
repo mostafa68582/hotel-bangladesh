@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\rc;
 use Illuminate\Http\Request;
 
-class hotelchating extends Controller
+class HotelChatController extends Controller
 {
     /**
      * Display a listing of the resource.
