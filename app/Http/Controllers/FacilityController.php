@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Facilities;
+use App\Models\Facility;
 use Illuminate\Http\Request;
-use Image;
+use Intervention\Image\Facades\Image;
 
 class FacilityController extends Controller
 {
@@ -20,12 +20,12 @@ class FacilityController extends Controller
 
     public function fetchFacilities(){
         try{
-            $facilities = facilities::where('status', 'active')->get();
+            $facilities = Facility::where('status', 'active')->get();
             return response()->json([
                 'status'     => true,
                 'facilities' => $facilities
             ]);
-        }catch(\Excetion $e){
+        }catch(\Exception $e){
             return response()->json([
                 'message' => 'Something Went Wrong!'
             ]);
@@ -67,7 +67,7 @@ class FacilityController extends Controller
             $img_uploads  = Image::make($request->icon)->resize(60, 44)->save(public_path('uploads/facilities/').$full_file_name);
             // store the value into the database based on file uploads
             if($img_uploads){
-                facilities::create([
+                Facility::create([
                     'name'   => $request->name,
                     'icon'   => $full_file_name,
                     'status' => $request->status
@@ -95,7 +95,7 @@ class FacilityController extends Controller
     {
         try{
 
-            $facilities = facilities::where('id', $id)->first();
+            $facilities = Facility::where('id', $id)->first();
 
             return $facilities;
 
@@ -115,7 +115,7 @@ class FacilityController extends Controller
     {
        try{
 
-          $facilities = facilities::where('id', $id)->first();
+          $facilities = Facility::where('id', $id)->first();
            return response()->json([
                 'facilities' => $facilities,
                 'img' => asset( 'uploads/facilities/' . $facilities->icon)
@@ -134,7 +134,7 @@ class FacilityController extends Controller
     public function update(Request $request, $id)
     {
         try{
-            $facilities = facilities::where('id', $request->id)->first();
+            $facilities = Facility::where('id', $request->id)->first();
             $file_Name  = $facilities->icon;
             $data = [
                 'name'   => $request->name,
@@ -180,7 +180,7 @@ class FacilityController extends Controller
     public function destroy($id)
     {
         try {
-            $facilities = facilities::where('id', $id)->first();
+            $facilities = Facility::where('id', $id)->first();
             $file_Name = $facilities->icon;
            if( $facilities->delete()){
                if(file_exists(public_path('uploads/facilities/'.$file_Name))){
@@ -202,10 +202,10 @@ class FacilityController extends Controller
     {
         if(isset($request->name))
         {
-            $facilities = facilities::where('name', 'LIKE', '%' . $request->get('name'). '%' );
+            $facilities = Facility::where('name', 'LIKE', '%' . $request->get('name'). '%' );
         }
         if(isset($request->status)){
-            $facilities = facilities::Where('status', $request->status);
+            $facilities = Facility::where('status', $request->status);
         }
         $facilities =  $facilities->get();
         return $facilities;

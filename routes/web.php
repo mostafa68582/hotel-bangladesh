@@ -30,15 +30,14 @@ Route::get('/', function () {
 //For hotel start
 //this is for test by jahid 28.3.2021
 Route::resource('/hotels','HotelController');
-Route::resource('/chat','hotelChatController');
 //this is for test by jahid 28.3.2021 end here
 // for hotel end
 
 // For categories 2.04.21
-Route::resource('/categories','faciCategoController');
-//Route::post('/categories/{id}','faciCategoController@update')->name('facilities.update');
-//Route::get('/fetch/categories','faciCategoController@fetchFacilities');
-//Route::post('/search/categories','faciCategoController@facilitiesSearch');
+Route::resource('/categories','facilityCategoryController');
+//Route::post('/categories/{id}','facilityCategoryController@update')->name('facilities.update');
+//Route::get('/fetch/categories','facilityCategoryController@fetchFacilities');
+//Route::post('/search/categories','facilityCategoryController@facilitiesSearch');
 
 
 // For facilities
