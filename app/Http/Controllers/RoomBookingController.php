@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\RoomBooking;
-use App\Models\Room;
+use App\RoomBooking;
+use App\Room;
 
 class RoomBookingController extends Controller
 {

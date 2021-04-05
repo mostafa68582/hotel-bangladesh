@@ -3,12 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Room;
-use App\Models\RoomType;
-use App\Models\FacilityCategory;
-use App\Models\facilities;
-use App\Models\Image;
-use Image;
+use App\Room;
+use App\RoomType;
+use App\FacilityCategory;
+use App\Facility;
+use App\Image;
 
 class RoomController extends Controller
 {
@@ -122,7 +121,7 @@ class RoomController extends Controller
                     $facilities_category = FacilityCategory::all();
                     foreach($facilities_category as $category){
                         foreach($facilites[$category->name] as $facility){
-                            facilities::create([
+                            Facility::create([
                                 'facilities_cat_id' => $category->id,
                                 'room_id'           => $room->id,
                                 'name'              => $facility

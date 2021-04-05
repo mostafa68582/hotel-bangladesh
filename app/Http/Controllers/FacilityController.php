@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Facility;
+use App\Facility;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image;
 

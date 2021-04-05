@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
-use Image;
+use Intervention\Image\Facades\Image;
 
 class UserController extends Controller
 {
@@ -28,7 +28,7 @@ class UserController extends Controller
             ]);
 
         }catch(\Excetion $e){
-            
+
             return response()->json([
                 'message' => 'Something Went Wrong!'
             ]);
@@ -54,7 +54,7 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         $request->validate([
             'first_name' => 'required',
             'last_name'  => 'required',
