@@ -24,7 +24,7 @@ Route::get('/add-room', function () {
     return view('backend.pages.room.add-room');
 });/*this test route*/
 Route::get('/', function () {
-    return view('backend.master');
+    return view('backend.dashboard');
 })->name('home');
 
 //For hotel start
