@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Hotel;
 use Illuminate\Http\Request;
 
-class HotelController extends Controller
+class HomeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,17 +13,17 @@ class HotelController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.hotels.index');
+        return view('backend.master');
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Http\Response|\Illuminate\View\View
+     * @return \Illuminate\Http\Response
      */
     public function create()
     {
-        return view('backend.pages.hotels.create');
+        //
     }
 
     /**
@@ -41,10 +40,10 @@ class HotelController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Hotel  $hotel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Hotel $hotel)
+    public function show($id)
     {
         //
     }
@@ -52,10 +51,10 @@ class HotelController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Hotel  $hotel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Hotel $hotel)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +63,10 @@ class HotelController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Hotel  $hotel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Hotel $hotel)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +74,10 @@ class HotelController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Hotel  $hotel
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Hotel $hotel)
+    public function destroy($id)
     {
         //
     }

@@ -17,7 +17,7 @@ class CreateGuestsTable extends Migration
             $table->id();
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('user_name')->unique();
+            $table->string('username')->unique();
             $table->string('email')->unique();
             $table->string('phone_number', 20)->unique();
             $table->string('avatar');
@@ -28,8 +28,6 @@ class CreateGuestsTable extends Migration
             $table->string('nationality')->nullable();
             $table->string('gender')->nullable();
             $table->string('address')->nullable();
-            $table->string('api_token')->unique()->nullable();
-            $table->string('otp_token')->unique()->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

@@ -24,7 +24,7 @@ $factory->define(User::class, function (Faker $faker) {
     return [
         'first_name' => $faker->firstName,
         'last_name' => $faker->lastName,
-        'user_name' => $faker->unique()->userName,
+        'username' => $faker->unique()->userName,
         'email' => $email,
         'phone_number' => $faker->unique()->phoneNumber,
         'user_type' => 'super_admin',
@@ -32,8 +32,6 @@ $factory->define(User::class, function (Faker $faker) {
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'status' => 'active',
-        'api_token' => User::generateApiToken(),
-        'otp_token' => User::generateOtp(),
         'remember_token' => Str::random(10),
     ];
 });

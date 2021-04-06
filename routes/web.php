@@ -13,19 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Auth::routes();
+Auth::routes(['verify' => true]);
 
 Route::get('/', function () {
     return view('frontend.home');
 })->name('frontend.home');
 
-Route::get('/backend', function () {
-    return view('backend.master');
-})->name('backend.home');
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::group(['prefix' => '/admin', 'middleware' => ['auth', 'verified'], 'as' => 'admin.'], function () {
 
-Route::resource('/hotels', 'HotelController');
+    Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::resource('/hotels', 'HotelController');
+});
 
 //Route::get('/test', function () {
 //    return view('backend.master');
