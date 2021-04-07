@@ -62,6 +62,7 @@
                 </form> <!--========== room booking from end ==========-->
                 <div class="all_hotels"> <!--========== all hotels start ==========-->
                     <div class="row">
+                        @forelse($hotels as $hotel)
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="hotel_contents_wrap">
                                 <div class="hotel_contents">
@@ -74,164 +75,19 @@
                                             </ul>
                                         </div>
                                     </li>
-                                    <img src="{{ asset('backend/assets/images/about-man-img.jpg') }}" alt="img">
-                                    <h4>global technologies</h4>
-                                    <h5>barry cuda</h5>
-                                    <h6>ceo</h6>
+                                    <img src="{{ asset('backend/assets/images/hotel.jpg') }}" alt="img">
+                                    <h4>{{ $hotel->name }}</h4>
+                                    <h5>{{ $hotel->user->getFullName() }}</h5>
+                                    <h5>{{ $hotel->hotel_id }}</h5>
+                                    <h6>Owner</h6>
                                     <h3><a href="#">message</a><a href="#">view profile</a>
                                     </h3>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="hotel_contents_wrap">
-                                <div class="hotel_contents">
-                                    <li class="all_hotel_more_opt_icon mor_opt_icon_li"><i
-                                            class="fas fa-ellipsis-v"></i>
-                                        <div class="more_opt">
-                                            <ul>
-                                                <li>edit</li>
-                                                <li>remove</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <img src="{{ asset('backend/assets/images/about-man-img.jpg') }}" alt="img">
-                                    <h4>global technologies</h4>
-                                    <h5>barry cuda</h5>
-                                    <h6>ceo</h6>
-                                    <h3><a href="#">message</a><a href="#">view profile</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="hotel_contents_wrap">
-                                <div class="hotel_contents">
-                                    <li class="all_hotel_more_opt_icon mor_opt_icon_li"><i
-                                            class="fas fa-ellipsis-v"></i>
-                                        <div class="more_opt">
-                                            <ul>
-                                                <li>edit</li>
-                                                <li>remove</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <img src="{{ asset('backend/assets/images/about-man-img.jpg') }}" alt="img">
-                                    <h4>global technologies</h4>
-                                    <h5>barry cuda</h5>
-                                    <h6>ceo</h6>
-                                    <h3><a href="#">message</a><a href="#">view profile</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="hotel_contents_wrap">
-                                <div class="hotel_contents">
-                                    <li class="all_hotel_more_opt_icon mor_opt_icon_li"><i
-                                            class="fas fa-ellipsis-v"></i>
-                                        <div class="more_opt">
-                                            <ul>
-                                                <li>edit</li>
-                                                <li>remove</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <img src="{{ asset('backend/assets/images/about-man-img.jpg') }}" alt="img">
-                                    <h4>global technologies</h4>
-                                    <h5>barry cuda</h5>
-                                    <h6>ceo</h6>
-                                    <h3><a href="#">message</a><a href="#">view profile</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="hotel_contents_wrap">
-                                <div class="hotel_contents">
-                                    <li class="all_hotel_more_opt_icon mor_opt_icon_li"><i
-                                            class="fas fa-ellipsis-v"></i>
-                                        <div class="more_opt">
-                                            <ul>
-                                                <li>edit</li>
-                                                <li>remove</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <img src="{{ asset('backend/assets/images/about-man-img.jpg') }}" alt="img">
-                                    <h4>global technologies</h4>
-                                    <h5>barry cuda</h5>
-                                    <h6>ceo</h6>
-                                    <h3><a href="#">message</a><a href="#">view profile</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="hotel_contents_wrap">
-                                <div class="hotel_contents">
-                                    <li class="all_hotel_more_opt_icon mor_opt_icon_li"><i
-                                            class="fas fa-ellipsis-v"></i>
-                                        <div class="more_opt">
-                                            <ul>
-                                                <li>edit</li>
-                                                <li>remove</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <img src="{{ asset('backend/assets/images/about-man-img.jpg') }}" alt="img">
-                                    <h4>global technologies</h4>
-                                    <h5>barry cuda</h5>
-                                    <h6>ceo</h6>
-                                    <h3><a href="#">message</a><a href="#">view profile</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="hotel_contents_wrap">
-                                <div class="hotel_contents">
-                                    <li class="all_hotel_more_opt_icon mor_opt_icon_li"><i
-                                            class="fas fa-ellipsis-v"></i>
-                                        <div class="more_opt">
-                                            <ul>
-                                                <li>edit</li>
-                                                <li>remove</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <img src="{{ asset('backend/assets/images/about-man-img.jpg') }}" alt="img">
-                                    <h4>global technologies</h4>
-                                    <h5>barry cuda</h5>
-                                    <h6>ceo</h6>
-                                    <h3><a href="#">message</a><a href="#">view profile</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-12 col-sm-6 col-md-3">
-                            <div class="hotel_contents_wrap">
-                                <div class="hotel_contents">
-                                    <li class="all_hotel_more_opt_icon mor_opt_icon_li"><i
-                                            class="fas fa-ellipsis-v"></i>
-                                        <div class="more_opt">
-                                            <ul>
-                                                <li>edit</li>
-                                                <li>remove</li>
-                                            </ul>
-                                        </div>
-                                    </li>
-                                    <img src="{{ asset('backend/assets/images/about-man-img.jpg') }}" alt="img">
-                                    <h4>global technologies</h4>
-                                    <h5>barry cuda</h5>
-                                    <h6>ceo</h6>
-                                    <h3><a href="#">message</a><a href="#">view profile</a>
-                                    </h3>
-                                </div>
-                            </div>
-                        </div>
+                        @empty
+                            No hotels available!
+                        @endforelse
                     </div>
                 </div> <!--========== all hotels end ==========-->
             </section> <!--========== room booking end ==========-->

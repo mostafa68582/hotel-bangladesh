@@ -14,7 +14,9 @@ class HotelController extends Controller
      */
     public function index()
     {
-        return view('backend.pages.hotels.index');
+        $hotels = Hotel::with('user')->paginate(20);
+
+        return view('backend.pages.hotels.index', compact('hotels'));
     }
 
     /**
