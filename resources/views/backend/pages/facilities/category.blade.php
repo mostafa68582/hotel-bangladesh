@@ -8,7 +8,7 @@
   <form action="post" id="categoryForm">
   <div class="form-row">
     <div class="form-group col-md-4">
-      <label for="inputCity">Category name</label>
+      <label for="Categoryname">Category name</label>
       <input type="text" class="form-control" id="Categoryname" placeholder="Category name">
     </div>
 
@@ -53,6 +53,49 @@
 @push('scripts')
  <script>
  	
+  /*Form reset function*/
+        function resetForm() {
+            $("#myForm").trigger("reset")
+        }
+        /* For Store Users*/
+        let url = '{{ url("/categories") }}'
+        $("#createForm").on('submit', function(e) {
+            $.ajaxSetup({
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                }
+            });
+            e.preventDefault();
+            let Categoryname = $("#Categoryname").val()
+            let icon = $("#icon").val();
+            let formData = new FormData(this);
+            if (Categoryname.trim() == '') return toastr.error('Categories is required')
+            if (icon.trim() == '') return toastr.error('Icon is required')
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                data: formData,
+                cache: false,
+                contentType: false,
+                processData: false,
+                success: (data) => {
+                    if (data.status) {
+                        this.reset()
+                        toastr.success(data.message)
+                        window.location = '/users'
+                    } else {
+                        toastr.error(data.message)
+                    }
+                },
+                error: function(error) {
+                    console.log(error);
+                    Object.keys(error.responseJSON.errors).forEach((key) => {
+                        toastr.error(error.responseJSON.errors[key][0]);
+                    })
+                }
+            });
+        })
 
 </script>
 @endpush
