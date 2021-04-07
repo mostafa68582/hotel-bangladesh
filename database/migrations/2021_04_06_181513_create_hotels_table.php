@@ -17,7 +17,7 @@ class CreateHotelsTable extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('name');
-            $table->string('hotel_id');
+            $table->string('hotel_id')->unique();
             $table->string('phone');
             $table->string('email');
             $table->string('website');

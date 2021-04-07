@@ -17,7 +17,7 @@
                     <div class="sidebar_submenu">
                         <ul>
                             <li><a href="{{ route ('admin.hotels.index') }}">All Hotel</a></li>
-                            <li><a href="#">home</a></li>
+                            <li><a href="{{ route ('admin.hotels.create') }}">Create Hotel</a></li>
                             <li><a href="#">home</a></li>
                             <li><a href="#">home</a></li>
                             <li><a href="#">home</a></li>
