@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
 class User extends Authenticatable
 {
@@ -16,7 +17,17 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name', 'user_name', 'phone' ,'email', 'image', 'password',
+        'first_name',
+        'last_name',
+        'user_name',
+        'email',
+        'phone_number',
+        'password',
+        'user_type',
+        'avatar',
+        'status',
+        'api_token',
+        'otp_token'
     ];
 
     /**
@@ -36,4 +47,20 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    static function generateOtp(): string
+    {
+        $number = uniqid();
+        $varray = str_split($number);
+        $len = sizeof($varray);
+        $otp = array_slice($varray, $len - 5, $len);
+        $otp = implode(",", $otp);
+        $otp = str_replace(',', '', $otp);
+        return strtoupper($otp);
+    }
+
+    static function generateApiToken(): string
+    {
+        return hash('sha256', Str::random(60));
+    }
 }

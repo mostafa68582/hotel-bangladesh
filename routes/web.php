@@ -1,8 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\model\facilities;
-use App\model\RoomType;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +13,7 @@ use App\model\RoomType;
 |
 */
 
-/*Auth::routes();*/
-
 Auth::routes();
-
 Route::get('/', function () {
     return view('frontend.home');
 })->name('frontend.home');
