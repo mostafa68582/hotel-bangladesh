@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Guest;
 use Illuminate\Http\Request;
 
-class guestcontroller extends Controller
+class GuestController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -40,10 +41,10 @@ class guestcontroller extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Guest  $guest
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Guest $guest)
     {
         //
     }
@@ -51,10 +52,10 @@ class guestcontroller extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Guest  $guest
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Guest $guest)
     {
         //
     }
@@ -63,10 +64,10 @@ class guestcontroller extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Guest  $guest
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Guest $guest)
     {
         //
     }
@@ -74,10 +75,10 @@ class guestcontroller extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Guest  $guest
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Guest $guest)
     {
         //
     }
