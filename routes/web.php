@@ -22,13 +22,15 @@ Route::get('/', function () {
 
 Route::get('/home', function () {
     return view('home');
-})->name('home');
+})->name('home')->middleware(['auth', 'verified']);
 
 Route::group(['prefix' => '/admin', 'middleware' => ['auth', 'verified'], 'as' => 'admin.'], function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::resource('/hotels', 'HotelController');
+
+    Route::resource('/facilities', 'FacilityController');
 });
 
 //Route::get('/test', function () {

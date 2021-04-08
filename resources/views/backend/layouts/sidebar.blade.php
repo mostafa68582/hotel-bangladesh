@@ -18,23 +18,11 @@
                         <ul>
                             <li><a href="{{ route ('admin.hotels.index') }}">All Hotel</a></li>
                             <li><a href="{{ route ('admin.hotels.create') }}">Create Hotel</a></li>
-                            <li><a href="#">home</a></li>
-                            <li><a href="#">home</a></li>
-                            <li><a href="#">home</a></li>
                         </ul>
                     </div>
                 </li>
-                <li><a href="#"><i class="fas fa-chart-line"></i>UI Elements<i
-                            class="fas fa-angle-right side_rigth_arow"></i></a>
-                    <div class="sidebar_submenu">
-                        <ul>
-                            <li><a href="#">home</a></li>
-                            <li><a href="#">home</a></li>
-                            <li><a href="#">home</a></li>
-                            <li><a href="#">home</a></li>
-                            <li><a href="#">home</a></li>
-                        </ul>
-                    </div>
+                <li>
+                    <a href="{{ route('admin.facilities.index') }}"><i class="fas fa-chart-line"></i> Facilities</a>
                 </li>
                 <li><a href="#"><i class="fas fa-chart-line"></i>chart<i class="fas fa-angle-right side_rigth_arow"></i></a>
                     <div class="sidebar_submenu">

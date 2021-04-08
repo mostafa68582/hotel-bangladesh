@@ -8,9 +8,9 @@ class Hotel extends Model
 {
     protected $guarded = [];
 
-    public function generateHotelId()
+    public static function generateHotelId($name)
     {
-        // TODO: 5 Digit from name and random 4 digit number [RAFSAN1500]
+        return preg_replace('/[^A-Za-z0-9\-]/', '', strtoupper(mb_substr($name, 0, 5) . rand(1000, 9999)));
     }
 
     public function user()
