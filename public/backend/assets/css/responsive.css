@@ -22,11 +22,27 @@
 }
 /*_*screen size 1366x768 end*_*/
 
-/*_*screen size 1280x800 start*_*/
-@media screen and (max-width: 1280px) {
-    
+/*orders start*/
+
+/*_*screen size 1296x800 start*_*/
+@media screen and (max-width: 1296px) {
+    .order_colume_flex {
+        width: 18rem;
+        height: 11rem;
+    }
 }
-/*_*screen size 1280x800 end*_*/
+/*_*screen size 1296x800 end*_*/
+
+/*_*screen size 1239x800 start*_*/
+@media screen and (max-width: 1239px) {
+    .order_colume_flex {
+        width: 17rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 1239x800 end*_*/
+
+/*orders end*/
 
 /*_*screen size 1200x800 start*_*/
 @media screen and (max-width: 1200px) {
@@ -61,8 +77,66 @@
     .profile_data_value h4{
         font-size: 1.3rem;
     }
+
+    /*orders start*/
+
+    .order_colume_flex {
+        width: 16rem;
+        height: 11rem;
+    }
+
+    /*orders end*/
 }
 /*_*screen size 1200x800 end*_*/
+
+/*orders start*/
+
+/*_*screen size 1176x800 start*_*/
+@media screen and (max-width: 1176px) {
+    .order_colume_flex {
+        width: 15rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 1176x800 end*_*/
+
+/*_*screen size 1107x800 start*_*/
+@media screen and (max-width: 1107px) {
+    .order_colume_flex {
+        width: 19rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 1107x800 end*_*/
+
+/*_*screen size 1092x800 start*_*/
+@media screen and (max-width: 1092px) {
+    .order_colume_flex {
+        width: 18rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 1092x800 end*_*/
+
+/*_*screen size 1045x800 start*_*/
+@media screen and (max-width: 1045px) {
+    .order_colume_flex {
+        width: 17rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 1045x800 end*_*/
+
+/*_*screen size 998x800 start*_*/
+@media screen and (max-width: 998px) {
+    .order_colume_flex {
+        width: 16rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 998x800 end*_*/
+
+/*orders end*/
 
 /*_*screen size 994x800 start*_*/
 @media screen and (max-width: 993px) {
@@ -137,8 +211,47 @@
     .chat_box_text_area{
         padding-top: 10rem;
     }
+
+    /*orders start*/
+
+    .order_row_margin_top{
+        margin-top: 0;
+    }
+
+    /*orders end*/
 }
 /*_*screen size 991x800 end*_*/
+
+/*orders start*/
+
+/*_*screen size 985x800 start*_*/
+@media screen and (max-width: 985px) {
+    .order_colume_flex {
+        width: 15rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 985x800 end*_*/
+
+/*_*screen size 936x800 start*_*/
+@media screen and (max-width: 936px) {
+    .order_colume_flex {
+        width: 19rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 936x800 end*_*/
+
+/*_*screen size 872x800 start*_*/
+@media screen and (max-width: 872px) {
+    .order_colume_flex {
+        width: 18rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 872x800 end*_*/
+
+/*orders end*/
 
 /*_*screen size 845x1280 start*_*/
 @media screen and (max-width: 845px) {
@@ -146,8 +259,22 @@
         padding-right: .3rem;
     }
 }
+/*_*screen size 845x1280 end*_*/
 
-/*_*screen size 845x1280 start*_*/
+/*orders start*/
+
+/*_*screen size 836x800 start*_*/
+@media screen and (max-width: 836px) {
+    .order_colume_flex {
+        width: 17rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 836x800 end*_*/
+
+/*orders end*/
+
+/*_*screen size 800x1280 start*_*/
 @media screen and (max-width: 800px) {
     .side_navigation_bar{
         display: block;
@@ -164,6 +291,15 @@
     .footer{
         width: 81%;
     }
+
+    /*orders start*/
+
+    .order_colume_flex {
+        width: 16rem;
+        height: 11rem;
+    }
+
+    /*orders end*/
 }
 /*_*screen size 800x1280 end*_*/
 
@@ -217,6 +353,15 @@
         width: 100%;
         margin-top: 0;
     }
+
+    /*orders start*/
+
+    .order_colume_flex {
+        width: 20rem;
+        height: 11rem;
+    }
+
+    /*orders end*/
 }
 /*_*screen size 774x1024 end*_*/
 
@@ -264,6 +409,19 @@
 }
 /*_*screen size 767x962 end*_*/
 
+/*orders start*/
+
+/*_*screen size 745x812 start*_*/
+@media screen and (max-width: 745px) {
+    .order_colume_flex {
+        width: 19rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 745x812 end*_*/
+
+/*orders end*/
+
 /*_*screen size 727x812 start*_*/
 @media screen and (max-width: 727px) {
     .family_information_table table tr th{
@@ -278,6 +436,37 @@
 }
 /*_*screen size 727x812 end*_*/
 
+/*orders start*/
+
+/*_*screen size 715x812 start*_*/
+@media screen and (max-width: 715px) {
+    .order_colume_flex {
+        width: 18rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 715x812 end*_*/
+
+/*_*screen size 685x812 start*_*/
+@media screen and (max-width: 685px) {
+    .order_colume_flex {
+        width: 17rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 685x812 end*_*/
+
+/*_*screen size 655x812 start*_*/
+@media screen and (max-width: 655px) {
+    .order_colume_flex {
+        width: 16rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 655x812 end*_*/
+
+/*orders end*/
+
 /*_*screen size 630x640 start*_*/
 @media screen and (max-width: 630px) {
     .booking_room_table_content table tr th{
@@ -287,8 +476,52 @@
     .booking_room_table_content table tr td{
         font-size: 1.1rem;
     }
+
+    .inbox_singal_mail_body_content_wrapp{
+        margin-left: 0;
+    }
 }
 /*_*screen size 630x640 end*_*/
+
+/*orders start*/
+
+/*_*screen size 625x812 start*_*/
+@media screen and (max-width: 625px) {
+    .order_colume_flex {
+        width: 15rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 625x812 end*_*/
+
+/*_*screen size 595x812 start*_*/
+@media screen and (max-width: 595px) {
+    .order_colume_flex {
+        width: 23rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 595x812 end*_*/
+
+/*_*screen size 583x812 start*_*/
+@media screen and (max-width: 583px) {
+    .order_colume_flex {
+        width: 22rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 583x812 end*_*/
+
+/*_*screen size 582x812 start*_*/
+@media screen and (max-width: 582px) {
+    .order_colume_flex {
+        width: 22rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 582x812 end*_*/
+
+/*orders end*/
 
 /*_*screen size 575x962 start*_*/
 @media screen and (max-width: 575px) {
@@ -345,6 +578,46 @@
 }
 /*_*screen size 574x962 end*_*/
 
+/*orders start*/
+
+/*_*screen size 562x812 start*_*/
+@media screen and (max-width: 562px) {
+    .order_colume_flex {
+        width: 21rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 562x812 end*_*/
+
+/*_*screen size 542x812 start*_*/
+@media screen and (max-width: 542px) {
+    .order_colume_flex {
+        width: 20rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 542x812 end*_*/
+
+/*_*screen size 522x812 start*_*/
+@media screen and (max-width: 522px) {
+    .order_colume_flex {
+        width: 19rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 522x812 end*_*/
+
+/*_*screen size 502x812 start*_*/
+@media screen and (max-width: 502px) {
+    .order_colume_flex {
+        width: 18rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 502x812 end*_*/
+
+/*orders end*/
+
 
 /*_*screen size 500x812 start*_*/
 @media screen and (max-width: 500px) {
@@ -385,8 +658,67 @@
     .compose_input_box input{
         width: 79%;
     }
+
+    /*orders start*/
+
+    .recent_orders table thead tr th{
+        font-size: 1rem;
+        padding: 1rem .2rem;
+    }
+
+    .recent_orders table tbody tr td{
+        font-size: .9rem;
+        padding: .8rem .1rem;
+    }
+
+    .recent_orders table tbody tr td button a{
+        font-size: 1.2rem;
+        padding: .5rem 1rem;
+    }
+
+    /*orders end*/
 }
 /*_*screen size 500x812 end*_*/
+
+/*orders start*/
+
+/*_*screen size 582x812 start*_*/
+@media screen and (max-width: 582px) {
+    .order_colume_flex {
+        width: 17rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 582x812 end*_*/
+
+/*_*screen size 462x812 start*_*/
+@media screen and (max-width: 462px) {
+    .order_colume_flex {
+        width: 16rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 462x812 end*_*/
+
+/*_*screen size 442x812 start*_*/
+@media screen and (max-width: 442px) {
+    .order_colume_flex {
+        width: 15rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 442x812 end*_*/
+
+/*_*screen size 422x812 start*_*/
+@media screen and (max-width: 422px) {
+    .order_colume_flex {
+        width: 30rem;
+        height: 11rem;
+    }
+}
+/*_*screen size 422x812 end*_*/
+
+/*orders end*/
 
 /*_*screen size 414x812 start*_*/
 @media screen and (max-width: 414px) {
@@ -419,6 +751,11 @@
         font-size: .8rem;
         padding: 1.3rem 0rem;
     }
+
+    .inbox_table_menu ul li a{
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
 }
 /*_*screen size 414x812 end*_*/
 
@@ -431,6 +768,15 @@
     .add_text_head{
         width: 98%;
     }
+
+    /*order start*/
+
+    .order_colume_flex {
+        width: 25rem;
+        height: 11rem;
+    }
+
+    /*order end*/
 }
 /*_*screen size 375x812 end*_*/
 

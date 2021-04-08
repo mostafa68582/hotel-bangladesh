@@ -1,0 +1,367 @@
+/*main content start*/
+.main_content{
+    width: 88%;
+    margin-left: auto;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+}
+
+/*user data start*/
+.user_data{
+    padding: 2rem;
+}
+
+/*user profile data heading start*/
+.data_heading{
+    padding-bottom: 0;
+}
+
+.data_heading h3{
+    color: #171B1B;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 2.5rem;
+}
+
+.data_text a{
+    color: #686361;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+    text-decoration: none;
+}
+
+.add_text{
+    color: #68636194;
+    text-transform: capitalize;
+    font-size: 1.4rem;
+}
+/*user profile data heading end*/
+/*order section start*/
+
+/*order cart start*/
+.order_section{
+    padding: 1.5rem 2rem;
+}
+
+.order_colume_flex {
+    width: 19rem;
+    height: 11rem;
+    display: inline-block;
+    margin: 1rem;
+}
+
+.order_cart_content_wrapper{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.order_cart_content_wrapper_1{
+    background: linear-gradient(to top left, #FC953A, #FA500A);
+}
+
+.order_cart_content_wrapper_2{
+    background: linear-gradient(to top left, #10A2F3, #0E7DD7);
+}
+
+.order_cart_content_wrapper_3{
+    background: linear-gradient(to top left, #0DCABB, #249F97);
+}
+
+.order_cart_content_wrapper_4{
+    background: linear-gradient(to top left, #7CCCEE, #584ECB);
+}
+
+.order_cart_content_wrapper_5{
+    background: linear-gradient(to top left, #F547CB, #DC0A39);
+}
+
+.order_cart_content_wrapper_6{
+    background: linear-gradient(to top left, #25C323, #129224);
+}
+
+.order_cart_content_wrapper_4::before {
+    background: #584ECB;
+}
+.order_cart_content_wrapper::before {
+    content: "";
+    height: 19rem;
+    width: 45rem;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: -26rem;
+    transform: rotate(-74deg);
+}
+
+.order_cart_content_wrapper_1::before{
+    background: #FA500A;
+}
+
+.order_cart_content_wrapper_2::before{
+    background: #0E7DD7;
+}
+
+.order_cart_content_wrapper_3::before{
+    background: #249F97;
+}
+
+.order_cart_content_wrapper_4::before{
+    background: #584ECB;
+}
+
+.order_cart_content_wrapper_5::before{
+    background: #DC0A39;
+}
+
+.order_cart_content_wrapper_6::before{
+    background: #129224;
+}
+
+.order_content{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    padding: 1rem 1rem;
+}
+
+.order_content h4{
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 0;
+}
+
+.order_scoure {
+    display: flex;
+    justify-content: space-between;
+    padding: .7rem 0;
+}
+
+.order_scoure h4{
+    color: #fff;
+    font-weight: bold;
+    font-size: 1.7rem;
+    margin-bottom: 0;
+}
+
+.order_scoure_symbole{
+    font-size: 2rem !important;
+}
+
+.order_content button{
+    border: none;
+    outline: none;
+    background: #fff;
+    width: 7rem;
+    border-radius: .5rem;
+    transition: .3s ease-in-out;
+}
+
+.order_content button:hover{
+    background: #85c2eb;
+    box-shadow: 0 0 .3rem rgba(0, 0, 0, 0.616);
+}
+
+.order_content button:hover a{
+    color: #fff !important;
+}
+
+.order_content button a{
+    padding: .3rem .3rem;
+    color: #3498db;
+    font-size: 1.1rem;
+    text-decoration: none;
+    text-transform: capitalize;
+    font-weight: bold;
+    display: block;
+}
+
+.row_margin_top{
+    margin-top: 2rem;
+}
+
+.order_row_margin_top{
+    margin-top: 2rem;
+}
+
+/*order cart end*/
+
+/*point chart start*/
+.point_chart_content_wrapper{
+    padding: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25rem;
+    background: #fff;
+    box-shadow: 0 0 0.2rem #0000004f;
+}
+
+.point_div{
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1rem 1rem;
+}
+
+.point_div_1{
+    border: 1.5rem solid #25C323;
+}
+
+.point_div_2{
+    border: 1.5rem solid #584ECB;
+}
+
+.point_div_3{
+    border: 1.5rem solid #3498db;
+}
+
+.point_div_4{
+    border: 1.5rem solid #FA500A;
+}
+
+.point_div h4{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+}
+
+.point_chart_content h4{
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.point_chart_content h5{
+    font-size: 1.2rem;
+    color: #333;
+    text-align: center;
+}
+/*point chart end*/
+
+/*recent order customer start*/
+.recent_orders{
+    padding: 1.5rem;
+    background: #fff;
+}
+
+.recent_orders h4{
+    color: #333;
+    font-weight: bold;
+    font-size: 1.6rem;
+    text-transform: capitalize;
+    border-bottom: .01rem solid rgba(116, 113, 113, 0.253);
+    padding-bottom: 1rem;
+}
+
+.recent_orders table{
+    width: 100%;
+}
+
+.recent_orders table thead tr th{
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: capitalize;
+    padding: 1rem .5rem;
+}
+
+.recent_orders table thead tr{
+    border-bottom: .01rem solid rgba(116, 113, 113, 0.253);
+}
+
+.recent_orders table tbody tr{
+    border-bottom: .01rem solid rgba(116, 113, 113, 0.253);
+}
+
+.recent_orders table tbody tr td{
+    font-size: 1.3rem;
+    color: #333;
+    padding: .8rem .5rem;
+}
+
+.recent_orders table tbody tr td button{
+    border: none;
+    outline: none;
+    background: none;
+    float: right;
+}
+
+.recent_orders table tbody tr td button a{
+    font-size: 1.4rem;
+    padding: .5rem 2rem;
+    background: #584ECB;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 2rem;
+    text-transform: capitalize;
+}
+
+.recent_orders table tbody tr td button a:hover{
+    text-decoration: none;
+}
+
+.recent_orders table tbody tr td button a i{
+    margin-right: 1rem;
+}
+/*recent order customer end*/
+
+/*popular product start*/
+.recent_orders table tbody tr td img{
+    width: 5rem;
+    height: 5rem;
+}
+
+.popular_table_td_1{
+    width: 15%;
+}
+
+.popular_table_td_2{
+    width: 25%;
+}
+
+.popular_table_td_3{
+    width: 15%;
+}
+
+.popular_table_td_4{
+    width: 15%;
+}
+
+.popular_table_td_5{
+    width: 15%;
+}
+
+.popular_table_td_6{
+    width: 15%;
+}
+/*popular product start*/
+
+/*top sell in last month start*/
+.top_sell_in_last_month{
+    background: #fff;
+    padding: 1.5rem;
+}
+.graph_content h4{
+    color: #333;
+    font-size: 1.7rem;
+    font-weight: bold;
+    border-bottom: .01rem solid rgba(116, 113, 113, 0.253);
+    text-transform: capitalize;
+    padding-bottom: 1rem;
+}
+/*top sell in last month end*/
+
+/*order section start*/
+/*user data end*/
+/*main content end*/
