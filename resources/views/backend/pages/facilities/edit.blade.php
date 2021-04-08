@@ -4,7 +4,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header">
-                    <i class="fas fa-list"></i> Facilities
+                    <i class="fas fa-list"></i> Edit Facility
                 </div>
                 <div class="card-body col-md-8 mx-auto">
                     {{-- Validation Errors --}}
@@ -37,7 +37,7 @@
                                 <input type="file" class="form-control-file" id="icon" name="icon">
                             </div>
                             <div>
-                                <img src="{{ $facility->icon }}" alt="{{ $facility->name }}">
+                                <img src="{{ $facility->icon }}" alt="{{ $facility->name }}" height="100px" width="auto">
                             </div>
                         </div>
 

@@ -85,13 +85,23 @@
                 @forelse($facilities as $facility)
                     <tr>
                         <td>{{ $facility->id }}</td>
-                        <td><img src="{{ $facility->icon }}" alt="{{ $facility->name }}" height="50px" width="auto"></td>
+                        <td><img src="{{ $facility->icon }}" alt="{{ $facility->name }}" height="50px" width="auto">
+                        </td>
                         <td>{{ $facility->name }}</td>
                         <td>{{ $facility->type }}</td>
                         <td>{{ $facility->status }}</td>
                         <td>
-                            <a href="{{ route('admin.facilities.edit', $facility) }}" class="btn btn-primary">edit</a>
-                            <a href="#" class="btn btn-danger">delete</a>
+                            <a href="{{ route('admin.facilities.edit', $facility) }}"
+                               class="btn btn-primary btn-block mb-1"><i class="fas fa-edit"></i> Edit</a>
+
+                            <form action="{{ route('admin.facilities.destroy', $facility) }}" method="POST"
+                                  onsubmit="return confirm('Are you sure to delete data?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger btn-block">
+                                    <i class="fas fa-trash"></i> Delete
+                                </button>
+                            </form>
                         </td>
                     </tr>
                 @empty

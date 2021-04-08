@@ -15,7 +15,7 @@ class FacilityController extends Controller
      */
     public function index()
     {
-        $facilities = Facility::latest()->paginate(20);
+        $facilities = Facility::latest('id')->paginate(20);
 
         return view('backend.pages.facilities.index', compact('facilities'));
     }
@@ -144,10 +144,16 @@ class FacilityController extends Controller
      * Remove the specified resource from storage.
      *
      * @param \App\Facility $facility
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Facility $facility)
     {
-        //
+        if (file_exists(public_path($facility->icon))) {
+            @unlink(public_path($facility->icon));
+        }
+
+        $facility->delete();
+
+        return back()->with(['success' => 'Facility Deleted Successfully!']);
     }
 }
