@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Facility;
+use App\FacilityHotel;
 use App\Hotel;
 use Illuminate\Http\Request;
 
@@ -26,7 +28,9 @@ class HotelController extends Controller
      */
     public function create()
     {
-        return view('backend.pages.hotels.create');
+        $facilities = Facility::where('type', 'hotel')->oldest('id')->get();
+
+        return view('backend.pages.hotels.create', compact('facilities'));
     }
 
     /**
@@ -37,6 +41,7 @@ class HotelController extends Controller
      */
     public function store(Request $request)
     {
+//        dd($request->all());
         $validated = $this->validate($request, [
             'name' => 'required|min:3',
             'phone' => 'required|min:11|max:15',
@@ -59,6 +64,18 @@ class HotelController extends Controller
                 'user_id' => auth()->id(),
                 'hotel_id' => Hotel::generateHotelId($request->name)
             ]);
+
+        $facilities = $request->facilities;
+
+        if (!empty($facilities)) {
+            foreach ($facilities as $facility) {
+                FacilityHotel::create([
+                    'hotel_id' => $hotel->id,
+                    'facility_id' => $facility,
+                    'status' => 'active'
+                ]);
+            }
+        }
 
         return back()->with(['success' => 'Hotel Created Successfully!']);
     }

@@ -17,4 +17,9 @@ class Hotel extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function facilities()
+    {
+        return $this->hasMany(Facility::class)->where('type', '=', 'hotel');
+    }
 }
