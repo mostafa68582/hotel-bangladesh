@@ -21,11 +21,11 @@
                         </ul>
                     </div>
                 </li>
-                <li><a href="#"><i class="fas fa-chart-line"></i>UI Elements<i
+                <li><a href="{{ route('admin.facilities.index') }}"><i class="fas fa-chart-line"></i> Facilities<i
                             class="fas fa-angle-right side_rigth_arow"></i></a>
                     <div class="sidebar_submenu">
                         <ul>
-                            <li><a href="#">home</a></li>
+                            <li><a href="#">Create Facilities</a></li>
                             <li><a href="#">home</a></li>
                             <li><a href="#">home</a></li>
                             <li><a href="#">home</a></li>
