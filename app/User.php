@@ -5,8 +5,9 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Str;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use Notifiable;
 
@@ -16,7 +17,15 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'first_name','last_name', 'user_name', 'phone' ,'email', 'image', 'password',
+        'first_name',
+        'last_name',
+        'username',
+        'email',
+        'phone_number',
+        'password',
+        'user_type',
+        'avatar',
+        'status'
     ];
 
     /**
@@ -36,4 +45,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function hotel()
+    {
+        return $this->hasOne(Hotel::class);
+    }
+
+    public function getFullName()
+    {
+        return $this->first_name. ' ' . $this->last_name;
+    }
 }

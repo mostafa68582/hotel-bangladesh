@@ -13216,7 +13216,7 @@ function getWidthOrHeight( elem, dimension, extra ) {
 	// Normalize "" and auto
 	val = parseFloat( val ) || 0;
 
-	// Adjust for the element's box model
+	// Adjust for the element's box Models
 	return ( val +
 		boxModelAdjustment(
 			elem,
@@ -40968,7 +40968,7 @@ function createComponent (
   // component constructor creation
   resolveConstructorOptions(Ctor);
 
-  // transform component v-model data into props & events
+  // transform component v-Models data into props & events
   if (isDef(data.model)) {
     transformModel(Ctor.options, data);
   }
@@ -41055,7 +41055,7 @@ function mergeHook$1 (f1, f2) {
   return merged
 }
 
-// transform component v-model info (value and callback) into
+// transform component v-Models info (value and callback) into
 // prop and event handler respectively.
 function transformModel (options, data) {
   var prop = (options.model && options.model.prop) || 'value';
@@ -44895,7 +44895,7 @@ function rangeSetItem (
 /*  */
 
 /**
- * Cross-platform code generation for component v-model
+ * Cross-platform code generation for component v-Models
  */
 function genComponentModel (
   el,
@@ -44927,7 +44927,7 @@ function genComponentModel (
 }
 
 /**
- * Cross-platform codegen helper for generating v-model value assignment code.
+ * Cross-platform codegen helper for generating v-Models value assignment code.
  */
 function genAssignmentCode (
   value,
@@ -44942,7 +44942,7 @@ function genAssignmentCode (
 }
 
 /**
- * Parse a v-model expression into a base path and a final key segment.
+ * Parse a v-Models expression into a base path and a final key segment.
  * Handles both dot-path and possible square brackets.
  *
  * Possible cases:
@@ -44962,7 +44962,7 @@ var len, str, chr, index$1, expressionPos, expressionEndPos;
 
 function parseModel (val) {
   // Fix https://github.com/vuejs/vue/pull/7730
-  // allow v-model="obj.val " (trailing whitespace)
+  // allow v-Models="obj.val " (trailing whitespace)
   val = val.trim();
   len = val.length;
 
@@ -45065,16 +45065,16 @@ function model (
     // value will throw an error.
     if (tag === 'input' && type === 'file') {
       warn$1(
-        "<" + (el.tag) + " v-model=\"" + value + "\" type=\"file\">:\n" +
+        "<" + (el.tag) + " v-Models=\"" + value + "\" type=\"file\">:\n" +
         "File inputs are read only. Use a v-on:change listener instead.",
-        el.rawAttrsMap['v-model']
+        el.rawAttrsMap['v-Models']
       );
     }
   }
 
   if (el.component) {
     genComponentModel(el, value, modifiers);
-    // component v-model doesn't need extra runtime
+    // component v-Models doesn't need extra runtime
     return false
   } else if (tag === 'select') {
     genSelect(el, value, modifiers);
@@ -45086,15 +45086,15 @@ function model (
     genDefaultModel(el, value, modifiers);
   } else if (!config.isReservedTag(tag)) {
     genComponentModel(el, value, modifiers);
-    // component v-model doesn't need extra runtime
+    // component v-Models doesn't need extra runtime
     return false
   } else {
     warn$1(
-      "<" + (el.tag) + " v-model=\"" + value + "\">: " +
-      "v-model is not supported on this element type. " +
+      "<" + (el.tag) + " v-Models=\"" + value + "\">: " +
+      "v-Models is not supported on this element type. " +
       'If you are working with contenteditable, it\'s recommended to ' +
       'wrap a library dedicated for that purpose inside a custom component.',
-      el.rawAttrsMap['v-model']
+      el.rawAttrsMap['v-Models']
     );
   }
 
@@ -45169,7 +45169,7 @@ function genDefaultModel (
 ) {
   var type = el.attrsMap.type;
 
-  // warn if v-bind:value conflicts with v-model
+  // warn if v-bind:value conflicts with v-Models
   // except for inputs with v-bind:type
   {
     var value$1 = el.attrsMap['v-bind:value'] || el.attrsMap[':value'];
@@ -45177,7 +45177,7 @@ function genDefaultModel (
     if (value$1 && !typeBinding) {
       var binding = el.attrsMap['v-bind:value'] ? 'v-bind:value' : ':value';
       warn$1(
-        binding + "=\"" + value$1 + "\" conflicts with v-model on the same element " +
+        binding + "=\"" + value$1 + "\" conflicts with v-Models on the same element " +
         'because the latter already expands to a value binding internally',
         el.rawAttrsMap[binding]
       );
@@ -45217,9 +45217,9 @@ function genDefaultModel (
 
 /*  */
 
-// normalize v-model event tokens that can only be determined at runtime.
+// normalize v-Models event tokens that can only be determined at runtime.
 // it's important to place the event as the first in the array because
-// the whole point is ensuring the v-model callback gets called before
+// the whole point is ensuring the v-Models callback gets called before
 // user-attached handlers.
 function normalizeEvents (on) {
   /* istanbul ignore if */
@@ -45427,7 +45427,7 @@ function isNotInFocusAndDirty (elm, checkVal) {
 
 function isDirtyWithModifiers (elm, newVal) {
   var value = elm.value;
-  var modifiers = elm._vModifiers; // injected by v-model runtime
+  var modifiers = elm._vModifiers; // injected by v-Models runtime
   if (isDef(modifiers)) {
     if (modifiers.number) {
       return toNumber(value) !== toNumber(newVal)
@@ -46275,7 +46275,7 @@ function actuallySetSelected (el, binding, vm) {
   var isMultiple = el.multiple;
   if (isMultiple && !Array.isArray(value)) {
     warn(
-      "<select multiple v-model=\"" + (binding.expression) + "\"> " +
+      "<select multiple v-Models=\"" + (binding.expression) + "\"> " +
       "expects an Array value for its binding, but got " + (Object.prototype.toString.call(value).slice(8, -1)),
       vm
     );
@@ -48213,12 +48213,12 @@ function checkForAliasModel (el, value) {
   while (_el) {
     if (_el.for && _el.alias === value) {
       warn$2(
-        "<" + (el.tag) + " v-model=\"" + value + "\">: " +
-        "You are binding v-model directly to a v-for iteration alias. " +
+        "<" + (el.tag) + " v-Models=\"" + value + "\">: " +
+        "You are binding v-Models directly to a v-for iteration alias. " +
         "This will not be able to modify the v-for source array because " +
         "writing to the alias is like modifying a function local variable. " +
-        "Consider using an array of objects and use v-model on an object property instead.",
-        el.rawAttrsMap['v-model']
+        "Consider using an array of objects and use v-Models on an object property instead.",
+        el.rawAttrsMap['v-Models']
       );
     }
     _el = _el.parent;
@@ -48230,7 +48230,7 @@ function checkForAliasModel (el, value) {
 function preTransformNode (el, options) {
   if (el.tag === 'input') {
     var map = el.attrsMap;
-    if (!map['v-model']) {
+    if (!map['v-Models']) {
       return
     }
 
@@ -48894,9 +48894,9 @@ function genData$2 (el, state) {
   if (el.scopedSlots) {
     data += (genScopedSlots(el, el.scopedSlots, state)) + ",";
   }
-  // component v-model
+  // component v-Models
   if (el.model) {
-    data += "model:{value:" + (el.model.value) + ",callback:" + (el.model.callback) + ",expression:" + (el.model.expression) + "},";
+    data += "Models:{value:" + (el.model.value) + ",callback:" + (el.model.callback) + ",expression:" + (el.model.expression) + "},";
   }
   // inline-template
   if (el.inlineTemplate) {
@@ -49897,7 +49897,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
-  
+
 )
 
 /* hot reload */
@@ -49917,7 +49917,7 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
 
 /***/ }),
 
