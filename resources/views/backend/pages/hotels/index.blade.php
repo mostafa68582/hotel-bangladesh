@@ -89,6 +89,11 @@
                             No hotels available!
                         @endforelse
                     </div>
+                    <div class="row py-3">
+                        <div class="col d-flex justify-content-center">
+                            {{ $hotels->links() }}
+                        </div>
+                    </div>
                 </div> <!--========== all hotels end ==========-->
             </section> <!--========== room booking end ==========-->
 

@@ -14,7 +14,7 @@ class HotelController extends Controller
      */
     public function index()
     {
-        $hotels = Hotel::with('user')->paginate(20);
+        $hotels = Hotel::with('user')->latest()->paginate(20);
 
         return view('backend.pages.hotels.index', compact('hotels'));
     }
@@ -57,7 +57,7 @@ class HotelController extends Controller
 
         $hotel = Hotel::create($validated + [
                 'user_id' => auth()->id(),
-                'hotel_id' => strtoupper(mb_substr($request->name, 0, 5) . rand(1000, 9999))
+                'hotel_id' => Hotel::generateHotelId($request->name)
             ]);
 
         return back()->with(['success' => 'Hotel Created Successfully!']);

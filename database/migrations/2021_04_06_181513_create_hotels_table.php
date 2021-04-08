@@ -31,7 +31,7 @@ class CreateHotelsTable extends Migration
             $table->string('thana');
             $table->enum('payment_method', ['cash', 'gateway'])->default('gateway');
             $table->string('remark');
-            $table->string('description');
+            $table->text('description');
             $table->enum('status', ['pending', 'approved'])->default('pending');
             $table->timestamps();
         });
