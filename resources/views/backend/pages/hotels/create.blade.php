@@ -3,15 +3,20 @@
 
 @endpush
 @section('content')
-    <section class="data_table"> <!--========== data table start ==========-->
-        <form action="{{ route('admin.hotels.store') }}" method="POST"> <!--==========data form start ==========-->
+    <section class="data_table">
+        <!--========== data table start ==========-->
+        <form action="{{ route('admin.hotels.store') }}" method="POST">
+            <!--==========data form start ==========-->
             @csrf
-            <div class="data_heading"> <!--========== data table heading start ==========-->
-                <h3>room hotel</h3>
+            <div class="data_heading">
+                <!--========== data table heading start ==========-->
+                <h3>Add Hotel</h3>
                 <h4><span class="data_text"><a href="#">Database</a></span> / <span class="add_text">Add hotel</span>
                 </h4>
-            </div> <!--========== data table heading end ==========-->
-            <div class="container"> <!--========== data table input start ==========-->
+            </div>
+            <!--========== data table heading end ==========-->
+            <div class="container">
+                <!--========== data table input start ==========-->
                 <div class="data">
                     <div class="row">
                         {{-- Validation Errors --}}
@@ -31,7 +36,8 @@
                             </div>
                         @endif
 
-                        <div class="col-12 col-sm-12 col-md-12"> <!--========== basic info start ==========-->
+                        <div class="col-12 col-sm-12 col-md-12">
+                            <!--========== basic info start ==========-->
                             <div class="data_input_field">
                                 <div class="data_input">
                                     <div class="row input_row">
@@ -160,19 +166,49 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="continue_btn continue_btn_1">
-                                    <button class="cuntinue_1 stop_scrolling" type="submit" data-user-code="">continue
-                                    </button>
-                                </div>
                             </div>
-                        </div> <!--========== basic info end ==========-->
+                        </div>
+                        <!--========== basic info end ==========-->
                     </div>
                 </div>
-            </div> <!--========== data table input end ==========-->
+            </div>
+            <!--========== data table input end ==========-->
 
+            <div class="container">
+                <div class="data_input_field_head">
+                    <h3>hotel facility</h3>
+                </div>
+                <div class="row">
+                    @forelse($facilities as $facility)
+                        <div class="col-12 col-sm-6 col-md-3">
+                            <div class="check_boxes padding_bottom">
+                                <img src="{{ $facility->icon }}" height="20px" width="auto" alt="">
+                                <input class="check_box_input" type="checkbox" name="facilities[]" id="facility{{ $facility->id }}"
+                                       value="{{ $facility->id }}">
+                                <label class="input_field_name check_box_label"
+                                       for="facility{{ $facility->id }}">{{ $facility->name }}</label>
+                            </div>
+                        </div>
+                    @empty
+                        No facilities available yet!
+                    @endforelse
+                </div>
+            </div>
 
-        </form> <!--==========data form end ==========-->
-    </section> <!--========== data table end ==========-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="continue_btn continue_btn_1">
+                            <button class="cuntinue_1 stop_scrolling" type="submit" data-user-code="">continue
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+        <!--==========data form end ==========-->
+    </section>
+    <!--========== data table end ==========-->
 @endsection
 @push('scripts')
 
