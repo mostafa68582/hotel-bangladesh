@@ -10,8 +10,8 @@
             @csrf
             <div class="data_heading">
                 <!--========== data table heading start ==========-->
-                <h3>Add Hotel</h3>
-                <h4><span class="data_text"><a href="#">Database</a></span> / <span class="add_text">Add hotel</span>
+                <h3>Show Hotel</h3>
+                <h4><span class="data_text"><a href="#">Database</a></span> / <span class="add_text">Show hotel</span>
                 </h4>
             </div>
             <!--========== data table heading end ==========-->
@@ -45,28 +45,28 @@
                                             <label class="input_field_name" for="name">hotel name</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="name" name="name"
-                                                   value="{{ old('name') }}"
+                                                   value="{{ $hotel->name }}"
                                                    placeholder="Hotel name">
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-3">
                                             <label class="input_field_name" for="phone">hotel phone</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="phone" name="phone"
-                                                   value="{{ old('phone') }}"
+                                                   value="{{ $hotel->phone }}"
                                                    placeholder="Hotel phone">
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-3">
                                             <label class="input_field_name" for="email">hotel email</label>
                                             <br>
                                             <input class="data_field_input_tag" type="email" id="email" name="email"
-                                                   value="{{ old('email') }}"
+                                                   value="{{ $hotel->email }}"
                                                    placeholder="Enter hotel email">
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-3">
                                             <label class="input_field_name" for="website">Website url</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="website" name="website"
-                                                   value="{{ old('website') }}"
+                                                   value="{{ $hotel->website }}"
                                                    placeholder="Enter website url">
                                         </div>
                                     </div>
@@ -87,14 +87,14 @@
                                             <label class="input_field_name" for="location">Location</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="location"
-                                                   name="location" value="{{ old('location') }}"
+                                                   name="location" value="{{ $hotel->location }}"
                                                    placeholder="Hotel Location">
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-3">
                                             <label class="input_field_name" for="street_address">Street address</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="street_address"
-                                                   name="street_address" value="{{ old('street_address') }}"
+                                                   name="street_address" value="{{ $hotel->street_address }}"
                                                    placeholder="Street address">
                                         </div>
                                     </div>
@@ -103,28 +103,28 @@
                                             <label class="input_field_name" for="country">Country</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="country" name="country"
-                                                   value="{{ old('country') }}"
+                                                   value="{{ $hotel->country }}"
                                                    placeholder="Enter country">
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-3">
                                             <label class="input_field_name" for="city">City</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="city" name="city"
-                                                   value="{{ old('city') }}"
+                                                   value="{{ $hotel->city }}"
                                                    placeholder="Enter city">
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-3">
                                             <label class="input_field_name" for="zip_code">zip code</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="zip_code"
-                                                   name="zip_code" value="{{ old('zip_code') }}"
+                                                   name="zip_code" value="{{ $hotel->zip_code }}"
                                                    placeholder="Enter zip code">
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-3">
                                             <label class="input_field_name" for="district">District</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="district"
-                                                   name="district" value="{{ old('district') }}"
+                                                   name="district" value="{{ $hotel->district }}"
                                                    placeholder="Enter district">
                                         </div>
                                     </div>
@@ -134,7 +134,7 @@
                                             <label class="input_field_name" for="thana">Thana</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="thana" name="thana"
-                                                   value="{{ old('thana') }}"
+                                                   value="{{ $hotel->thana }}"
                                                    placeholder="Enter thana">
                                         </div>
                                         <div class="col-12 col-sm-12 col-md-3">
@@ -151,7 +151,7 @@
                                             <label class="input_field_name" for="remark">Remark</label>
                                             <br>
                                             <input class="data_field_input_tag" type="text" id="remark" name="remark"
-                                                   value="{{ old('remark') }}"
+                                                   value="{{ $hotel->remark }}"
                                                    placeholder="Enter remark">
                                         </div>
                                     </div>
@@ -162,7 +162,7 @@
                                             <br>
                                             <textarea class="description_taxt" name="description" id="description"
                                                       cols="30"
-                                                      rows="3">{{ old('description') }}</textarea>
+                                                      rows="3">{{ $hotel->description }}</textarea>
                                         </div>
                                     </div>
 
@@ -170,9 +170,19 @@
                                         <div class="col-12 col-sm-12">
                                             <label class="input_field_name" for="images[]">Images</label>
                                             <br>
-                                            <input class="data_field_input_tag" type="file" id="images[]" name="images[]"
+                                            <input class="data_field_input_tag" type="file" id="images[]"
+                                                   name="images[]"
                                                    value="" placeholder="Enter images" multiple>
                                         </div>
+                                    </div>
+                                    <div class="row">
+                                        @forelse($hotel->images as $image)
+                                            <div class="col-md-3">
+                                                <img src="{{ $image->path }}" alt="" class="img-fluid">
+                                            </div>
+                                        @empty
+                                            No images available!
+                                        @endforelse
                                     </div>
                                 </div>
                             </div>
@@ -188,15 +198,15 @@
                     <h3>hotel facility</h3>
                 </div>
                 <div class="row">
-                    @forelse($facilities as $facility)
+                    @forelse($hotel->facilityHotel as $facilityHotel)
                         <div class="col-12 col-sm-6 col-md-3">
                             <div class="check_boxes padding_bottom">
-                                <img src="{{ $facility->icon }}" height="20px" width="auto" alt="">
+                                <img src="{{ $facilityHotel->facility->icon }}" height="20px" width="auto" alt="">
                                 <input class="check_box_input" type="checkbox" name="facilities[]"
-                                       id="facility{{ $facility->id }}"
-                                       value="{{ $facility->id }}">
+                                       id="facility{{ $facilityHotel->facility->id }}"
+                                       value="{{ $facilityHotel->facility->id }}" checked>
                                 <label class="input_field_name check_box_label"
-                                       for="facility{{ $facility->id }}">{{ $facility->name }}</label>
+                                       for="facility{{ $facilityHotel->facility->id }}">{{ $facilityHotel->facility->name }}</label>
                             </div>
                         </div>
                     @empty

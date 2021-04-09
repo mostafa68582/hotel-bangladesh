@@ -16,9 +16,9 @@ class CreateHotelImagesTable extends Migration
         Schema::create('hotel_images', function (Blueprint $table) {
             $table->id();
             $table->foreignId('hotel_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->string('caption');
-            $table->string('image');
-            $table->enum('status', ['active', 'inactive'])->default('inactive');
+            $table->string('caption')->nullable();
+            $table->string('path');
+            $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
     }
