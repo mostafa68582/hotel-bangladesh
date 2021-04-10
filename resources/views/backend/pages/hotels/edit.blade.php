@@ -5,7 +5,7 @@
 @section('content')
     <section class="data_table">
         <!--========== data table start ==========-->
-        <form>
+        <form action="{{ route('admin.hotels.store') }}" method="POST" enctype="multipart/form-data">
             <!--==========data form start ==========-->
             @csrf
             <div class="data_heading">
@@ -166,15 +166,22 @@
                                         </div>
                                     </div>
 
+                                    <div class="row input_row">
+                                        <div class="col-12 col-sm-12">
+                                            <label class="input_field_name" for="images[]">Images</label>
+                                            <br>
+                                            <input class="data_field_input_tag" type="file" id="images[]"
+                                                   name="images[]"
+                                                   value="" placeholder="Enter images" multiple>
+                                        </div>
+                                    </div>
                                     <div class="row">
                                         @forelse($hotel->images as $image)
                                             <div class="col-md-3">
                                                 <img src="{{ $image->path }}" alt="" class="img-fluid">
                                             </div>
                                         @empty
-                                            <div class="col-md-3">
-                                                No images available!
-                                            </div>
+                                            No images available!
                                         @endforelse
                                     </div>
                                 </div>
@@ -205,6 +212,17 @@
                     @empty
                         No facilities available yet!
                     @endforelse
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="continue_btn continue_btn_1">
+                            <button class="cuntinue_1 stop_scrolling" type="submit" data-user-code="">continue
+                            </button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </form>

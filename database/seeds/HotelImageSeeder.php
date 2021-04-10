@@ -11,6 +11,6 @@ class HotelImageSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\HotelImage::class, 50)->create();
     }
 }
