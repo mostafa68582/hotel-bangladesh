@@ -30,6 +30,8 @@ Route::group(['prefix' => '/admin', 'middleware' => ['auth', 'verified'], 'as' =
     Route::resource('/hotels', 'HotelController');
 
     Route::resource('/facilities', 'FacilityController');
+
+    Route::resource('/room-types', 'RoomTypeController');
 });
 
 //Route::get('/test', function () {

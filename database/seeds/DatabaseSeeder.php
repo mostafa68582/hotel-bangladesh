@@ -15,6 +15,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             HotelSeeder::class,
             FacilitySeeder::class,
+            FacilityHotelSeeder::class,
+            HotelImageSeeder::class,
         ]);
     }
 }

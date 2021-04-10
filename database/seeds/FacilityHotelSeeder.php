@@ -11,6 +11,6 @@ class FacilityHotelSeeder extends Seeder
      */
     public function run()
     {
-        //
+        factory(\App\FacilityHotel::class, 20)->create();
     }
 }

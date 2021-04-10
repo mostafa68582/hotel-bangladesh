@@ -80,7 +80,7 @@
                                     <h5>{{ $hotel->user->getFullName() }}</h5>
                                     <h5>{{ $hotel->hotel_id }}</h5>
                                     <h6>Owner</h6>
-                                    <h3><a href="#">message</a><a href="#">view profile</a>
+                                    <h3><a href="#">message</a><a  href="{{ route('admin.hotels.show', $hotel) }}" >view details</a>
                                     </h3>
                                 </div>
                             </div>

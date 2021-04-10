@@ -16,8 +16,8 @@ class CreateRoomTypeImagesTable extends Migration
         Schema::create('room_type_images', function (Blueprint $table) {
             $table->id();
             $table->foreignId('room_type_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
-            $table->string('caption');
-            $table->string('image');
+            $table->string('caption')->nullable();
+            $table->string('path');
             $table->enum('status', ['active', 'inactive'])->default('inactive');
             $table->timestamps();
         });
