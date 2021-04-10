@@ -21,8 +21,8 @@ class CreateBookingsTable extends Migration
             $table->string('guest_name');
             $table->string('guest_email');
             $table->string('guest_phone_number');
-            $table->timestamp('arrival_date');
-            $table->timestamp('departure_date');
+            $table->timestamp('arrival_date')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('departure_date')->default(DB::raw('CURRENT_TIMESTAMP'));
             $table->enum('status', ['active', 'inactive'])->default('active');
             $table->timestamps();
         });
